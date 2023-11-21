@@ -21,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='w-full h-full overflow-x-hidden'>
-      <Navbar/>
+     
      <Hero/>
      <Brands/>
      <Layout/>

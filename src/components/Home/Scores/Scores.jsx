@@ -18,8 +18,8 @@ function Scores() {
         score2: '0',
         status: 'Finalizado',
         winner: 'Azteka',
-        team1logo: {azteka},
-        team2logo: {cloud9},
+        team1logo: azteka,
+        team2logo: cloud9,
     },
     {
         videogame: 'Valorant',
@@ -32,8 +32,8 @@ function Scores() {
         score2: '0',
         status: 'Finalizado',
         winner: 'Azteka',
-        team1logo: {azteka},
-        team2logo: {vitality},
+        team1logo: azteka,
+        team2logo: vitality,
     },
     {
         videogame: 'Valorant',
@@ -46,8 +46,8 @@ function Scores() {
         score2: '0',
         status: 'Finalizado',
         winner: 'Azteka',
-        team1logo: {azteka},
-        team2logo: {vitality},
+        team1logo: azteka,
+        team2logo: vitality,
     },
     {
         videogame: 'Valorant',
@@ -60,8 +60,8 @@ function Scores() {
         score2: '0',
         status: 'Finalizado',
         winner: 'Azteka',
-        team1logo: {azteka},
-        team2logo: {faze},
+        team1logo: azteka,
+        team2logo: faze,
     },
  ]
 
