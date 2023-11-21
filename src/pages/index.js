@@ -8,6 +8,7 @@ import Layout from '@/components/Home/Streaming/Live/Layout'
 import LayoutCreatorsEvents from '@/components/Home/Streaming/Creators&Events/LayoutCreatorsEvents'
 import Scores from '@/components/Home/Scores/Scores'
 import LayoutStore from '@/components/Home/Store/LayoutStore'
+import LayoutTeam from '@/components/Home/Team/LayoutTeam'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,6 +29,7 @@ export default function Home() {
      <LayoutCreatorsEvents/> 
      <Scores/>
      <LayoutStore/>
+     <LayoutTeam/>
       </main>
     </>
   )
