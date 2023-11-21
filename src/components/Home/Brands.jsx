@@ -41,7 +41,7 @@ const Brands = () => {
     };
 
     return (
-        <div className="carousel-container mb-8">
+        <div className="carousel-container mt-8 mb-8">
             <div className="carousel-wrapper flex text-[150px] gap-8 ">
                 {images.map((item, index) => (
                     <motion.div

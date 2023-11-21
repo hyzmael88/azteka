@@ -18,7 +18,7 @@ function Info() {
   return (
     <div className='w-full h-full flex flex-col text-left'>
         <div className='flex items-center gap-1'>
-        <Image src={avatar} className='rounded-full w-[55px] h-[55px] bg-green-500'/>
+        <Image src={avatar} alt='avatar-image' className='rounded-full w-[55px] h-[55px] bg-green-500'/>
         <div className='flex flex-col'>
         <div className='flex items-center'>
         <h3 className='header text-[48px]'>MORATOMICA</h3> <FaTwitch className='text-purple-500 text-[32px]'/>
