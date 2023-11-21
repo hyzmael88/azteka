@@ -1,5 +1,7 @@
+import Image from 'next/image'
 import React from 'react'
 import { FaTwitch } from 'react-icons/fa'
+import avatar from '../../../../assets/images/home/Streaming/avat.png'  
 
 function Info() {
     const time = [
@@ -11,26 +13,28 @@ function Info() {
         {name:"Saturday", time: "7:30 PM"},
         {name:"Sunday", time: "7:30 PM"}
     ]
+
+    
   return (
     <div className='w-full h-full flex flex-col text-left'>
-        <div className='flex items-center'>
-        <div className='rounded-full w-8 h-8 bg-green-500'/>
+        <div className='flex items-center gap-1'>
+        <Image src={avatar} className='rounded-full w-[55px] h-[55px] bg-green-500'/>
         <div className='flex flex-col'>
         <div className='flex items-center'>
-        <h3>MORATOMICA</h3> <FaTwitch className='text-purple-500'/>
+        <h3 className='header text-[48px]'>MORATOMICA</h3> <FaTwitch className='text-purple-500 text-[32px]'/>
         </div>
-        <p>11K SEGUIDORES
+        <p className='font-lato text-[16px]'>11K SEGUIDORES
     </p>
         </div>
         </div>
-        <p>¡Bienvenidos a mi rincón de diversión! 🐾🎮 Con 5 gatos como mis fieles asistentes (o jefes, depende del día), me aventuro en los reinos de League of Legends y Valorant, aunque a veces mezclo variedad.
+        <p className='font-lato text-[18px] mt-4 mb-4 font-bold'>¡Bienvenidos a mi rincón de diversión! 🐾🎮 Con 5 gatos como mis fieles asistentes (o jefes, depende del día), me aventuro en los reinos de League of Legends y Valorant, aunque a veces mezclo variedad.
              ¡Prepárate para risas, victorias y, por supuesto, momentos de inevitable manqueo! 😸🎉</p>
              <div className='flex flex-col '>
                 {
                     time.map((time,index) =>(
 
                 <div key={index} className='flex flex-row gap-8 uppercase'>
-                    <h4 className='w-[80px]'>{time.name}</h4> <p>{time.time}</p>
+                    <h4 className='w-[80px] font-lato text-[16px] font-bold'>{time.name}</h4> <p className='font-lato text-[16px] font-bold'>{time.time}</p>
                 </div>
                     ))
                 }

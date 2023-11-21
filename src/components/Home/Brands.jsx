@@ -1,14 +1,30 @@
 import React from 'react';
 import { FaReact, FaAngular, FaVuejs, FaEmber, FaNodeJs, FaAccusoft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import Asus from '../../assets/images/home/Brands/asus.svg'
+import Alien from '../../assets/images/home/Brands/Alien.svg'
+import Mercedez from '../../assets/images/home/Brands/Mercedez.svg'
+import Razer from '../../assets/images/home/Brands/Razer.svg'
+import Vertagear from '../../assets/images/home/Brands/Vertagear.svg'
+import Image from 'next/image';
 
 const Brands = () => {
-    const icons = [
-        <FaAngular key="angular" />,
-        <FaEmber key="ember" />,
-        <FaNodeJs key="nodejs" />,
-        <FaReact key="react" />,
-        <FaAccusoft key="accusoft" />
+    const images = [
+       {
+        image: Asus
+       },
+       {
+        image: Alien
+       },
+       {
+        image: Mercedez
+       },
+       {
+        image: Razer
+       },
+       {
+        image: Vertagear
+       },
     ];
 
     const variants = {
@@ -25,16 +41,16 @@ const Brands = () => {
     };
 
     return (
-        <div className="carousel-container">
-            <div className="carousel-wrapper flex text-[150px] gap-8 bg-red-500">
-                {icons.map((Icon, index) => (
+        <div className="carousel-container mb-8">
+            <div className="carousel-wrapper flex text-[150px] gap-8 ">
+                {images.map((item, index) => (
                     <motion.div
                         key={index}
-                        className="brand-image"
+                        className="brand-image items-center"
                         variants={variants}
                         animate="animate"
                     >
-                        {Icon}
+                        <Image src={item.image} alt='asus-brand' className='w-[232px] h-[48px]'/>
                     </motion.div>
                 ))}
             </div>

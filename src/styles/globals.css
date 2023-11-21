@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Rugen";
+  src: url("../assets/fonts/rugen/Rugen.ttf") format("truetype");
+}
+
+.header {
+  font-family: "Rugen";
+  color: #fff;
+
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+body {
+  background-color: #070B12;
+ 
+}
