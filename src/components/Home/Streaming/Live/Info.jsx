@@ -17,7 +17,7 @@ function Info() {
     
   return (
     <div className='w-full h-full flex flex-col text-left'>
-        <div className='flex items-center gap-1'>
+        <div className='hidden md:flex items-center gap-1'>
         <Image src={avatar} alt='avatar-image' className='rounded-full w-[55px] h-[55px] bg-green-500'/>
         <div className='flex flex-col'>
         <div className='flex items-center'>
@@ -27,9 +27,9 @@ function Info() {
     </p>
         </div>
         </div>
-        <p className='font-lato text-[18px] mt-4 mb-4 font-bold'>¡Bienvenidos a mi rincón de diversión! 🐾🎮 Con 5 gatos como mis fieles asistentes (o jefes, depende del día), me aventuro en los reinos de League of Legends y Valorant, aunque a veces mezclo variedad.
+        <p className='font-lato text-[14px]  md:text-[18px] mt-4 mb-4 font-bold '>¡Bienvenidos a mi rincón de diversión! 🐾🎮 Con 5 gatos como mis fieles asistentes (o jefes, depende del día), me aventuro en los reinos de League of Legends y Valorant, aunque a veces mezclo variedad.
              ¡Prepárate para risas, victorias y, por supuesto, momentos de inevitable manqueo! 😸🎉</p>
-             <div className='flex flex-col '>
+             <div className='hidden md:flex flex-col '>
                 {
                     time.map((time,index) =>(
 

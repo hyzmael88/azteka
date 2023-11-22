@@ -20,12 +20,12 @@ function Creators() {
   return (
     <div className='w-full h-full'>
         <TitulosStream titulo = "MAS CREADORES" />
-        <div className='w-full h-full grid grid-cols-2 gap-4 mt-2'>
+        <div className='w-full h-full grid grid-cols-2 gap-2 md:gap-4 mt-2'>
             {
                images.map((image, index) => {
                    return(
                        <div key={index} className='w-full h-full'>
-                           <Image src={image.image} alt="" className='w-full h-[161px] rounded-[7px]'/>
+                           <Image src={image.image} alt="" className='w-full h-[161px] rounded-[7px] object-cover'/>
                        </div>
                    )
                })

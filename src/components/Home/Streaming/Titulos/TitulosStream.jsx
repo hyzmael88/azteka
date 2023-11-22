@@ -11,7 +11,7 @@ function TitulosStream({titulo}) {
                 {titulo && 
                     <div className='w-full h-full flex flex-col justify-center mt-4 mb-4  '>
 
-                        <h2 className='header ml-[32px]'>{titulo}</h2>
+                        <h2 className='header text-[19px] md:text-[30px] ml-[32px]'>{titulo}</h2>
                     </div>
                 } 
         </div>

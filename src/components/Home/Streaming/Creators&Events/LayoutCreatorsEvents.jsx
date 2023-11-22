@@ -4,8 +4,9 @@ import Events from './Events'
 
 function LayoutCreatorsEvents() {
   return (
-    <div className='flex flex-row justify-between gap-4 w-full h-full
-    px-[24px]
+    <div className='flex flex-col md:flex-row justify-between gap-4 w-full h-full
+    px-[10px]
+    md:px-[24px]
     '>
         <Creators/>
         <Events/>
