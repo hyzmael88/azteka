@@ -12,9 +12,9 @@ function Banner() {
         items-center
         gap-4 z-10'>
         <h2 className='uppercase text-white header text-center md:text-left'>NEW FIRST KIT</h2>
-        <p className='text-white font-lato text-[16px] text-center font-bold  md:w-[486px]'>Lorem ipsum dolor sit amet,
+        <p className='text-white font-lato text-[16px] text-center font-bold w-[300px]  md:w-[486px]'>Lorem ipsum dolor sit amet,
          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
-         <div className='flex flex-row gap-10 mb-8'>
+         <div className='flex flex-row gap-4 md:gap-10 mb-8'>
             <button className='bg-[#FFB202] 
              font-lato  text-white rounded-[7px] w-[163px] h-[35px] uppercase '>
                 LOREM </button>

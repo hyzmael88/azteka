@@ -3,7 +3,17 @@ import React from 'react'
 import logo from '../assets/images/Logo/logo.png'
 import { FaArrowUp, FaFacebook, FaInstagram, FaTiktok, FaTwitch, FaTwitter, FaYoutube } from 'react-icons/fa'
 
+
+
 function Footer() {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <>
 <div className='flex md:hidden flex-col items-center justify-center
@@ -28,8 +38,11 @@ function Footer() {
                      
   </div>
   <div className='flex flex-row justify-center items-center mb-4 mt-4'> 
-    <div className='rounded-full w-[95px] h-[95px] flex justify-center items-center bg-[#21ECB5]'>
-      <FaArrowUp className='text-[#070B12] text-[40px] '/>
+    <div 
+    onClick={scrollToTop}
+    className='rounded-full w-[95px] h-[95px] flex justify-center items-center bg-[#21ECB5]'>
+      <FaArrowUp
+       className='text-[#070B12] text-[40px] '/>
     </div>
   </div>
   <div className='bg-black  text-white flex flex-row justify-center

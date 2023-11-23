@@ -11,13 +11,20 @@ function Videogames() {
         {img: valorant},
     ]
   return (
-    <div className=' h-[128px] flex flex-row items-center justify-center md:justify-start gap-8 '>
+    <div className=' h-[128px] flex flex-row items-center justify-between md:justify-start gap-8 '>
         <div className=' bg-[#08101D]  flex flex-row gap-8 rounded-[7px] px-6'>
 
             {
                 videogames.map((item, index)=>(
-                    <div className=' ' key={index}>
+                    <div className='flex   items-center ' key={index}>
                         <Image src={item.img} alt='videogame' className='w-[80px] h-[80px] object-contain'/>
+                        {
+                            index<videogames.length-1 &&
+                            <div className='w-[20px] flex justify-end '>
+
+                            <div className='w-[1px] h-[20px]  bg-white'></div>
+                            </div>
+                        }
                     </div>
                 ))
             }
