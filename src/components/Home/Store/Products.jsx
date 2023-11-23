@@ -66,7 +66,7 @@ function Products() {
         {products.map((product, index) => (
           <div
             key={index}
-            className="w-full h-full flex flex-col items-center justify-center"
+            className="w-full h-full flex flex-col items-center justify-center custom-shadow"
           >
             <Image
               src={product.img}

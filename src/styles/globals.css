@@ -27,3 +27,11 @@ body {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.70);
 
 }
+.custom-shadow-score {
+  box-shadow: 8px 4px 3px 0px rgba(0, 0, 0, 0.25) inset;
+
+}
+.custom-shadow-teams {
+  box-shadow: 2px 9px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+}

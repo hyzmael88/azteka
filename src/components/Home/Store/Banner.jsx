@@ -5,7 +5,9 @@ import banner from '../../../assets/images/home/Store/banner.png'
 function Banner() {
   return (
     <div className='w-full  h-[549px] relative'>
-        <Image src={banner} alt="" className='w-full h-full object-cover rounded-[7px]'/>
+        <Image src={banner} alt="" className='w-full h-full object-cover 
+        custom-shadow
+        rounded-[7px]'/>
         <div className='absolute w-full h-full left-0 top-0 flex flex-col justify-end
         
         md:justify-center md:ml-[24px]

@@ -9,7 +9,7 @@ function Trophies() {
 
 for (let i = 0; i < 5; i++) {
   trophieArray.push(
-    <Image key={i} src={trophie} alt='trophie' className='w-[59px] md:w-[102px] h-[110px] md:h-[190px] object-contain' />
+    <Image key={i} src={trophie} alt='trophie' className='w-[59px] custom-shadow md:w-[102px] h-[110px] md:h-[190px] object-contain' />
   );
 }
     
@@ -23,10 +23,10 @@ for (let i = 0; i < 5; i++) {
 
         </div>
         <div className='w-full h-full flex flex-col items-center md:items-start mt-4 md:mt-0 '>
-            <h3 className='header text-[23px] text-center md:text-left'>
+            <h3 className='header text-[23px] custom-shadow-text  text-center md:text-left'>
                 los mas grandes
             </h3>
-            <p className='text-white font-lato font-bol text-[16px] w-[354px] md:w-[497px]
+            <p className='text-white custom-shadow-text font-lato font-bol text-[16px] w-[354px] md:w-[497px]
             text-center md:text-left
             mt-4'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore

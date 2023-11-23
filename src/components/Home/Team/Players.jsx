@@ -56,14 +56,14 @@ function Players() {
          players.map((item, index)=>(
              <div className='w-full h-full flex flex-col justify-center items-center' key={index}>
                 <div className='w-[246px] h-[246px]  '>
-                    <Image src={item.img} alt='player' className=' w-full h-full rounded-[7px] object-cover '/>
+                    <Image src={item.img} alt='player' className=' w-full h-full rounded-[7px] custom-shadow object-cover '/>
                     </div>
                     <h2 className='text-white font-lato font-bold text-[16px] uppercase mt-4'>{item.name}</h2>
-                    <p className='text-white font-lato font-light  text-[13px]  uppercase'>{item.ubication}</p>
+                    <p className='text-white font-lato font-light  text-[13px]  uppercase  custom-shadow-text'>{item.ubication}</p>
                     <div className='flex flex-row gap-2 mt-2'>
-                        <a href={item.twitch}><FaTwitch className='text-white'/></a>
-                        <a href={item.twitter}><FaTwitter className='text-white'/></a>
-                        <a href={item.tiktok}><FaTiktok className='text-white'/></a>
+                        <a href={item.twitch}><FaTwitch className='text-white custom-shadow-text'/></a>
+                        <a href={item.twitter}><FaTwitter className='text-white custom-shadow-text'/></a>
+                        <a href={item.tiktok}><FaTiktok className='text-white custom-shadow-text'/></a>
                     </div>
                 </div>
             ))
