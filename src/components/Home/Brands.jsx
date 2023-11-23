@@ -29,7 +29,7 @@ const Brands = () => {
 
     const variants = {
         animate: {
-            x: [0,250],
+            x: [0,-250],
             transition: {
                 x: {
                     repeat: Infinity,
@@ -38,20 +38,47 @@ const Brands = () => {
                 },
             },
         },
+        animate2: {
+            x: [-880,0],
+            transition: {
+                x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 30,
+                },
+            },
+        },
     };
 
     return (
         <div className="carousel-container mt-8 mb-8">
-            <div className="carousel-wrapper flex  gap-8 ">
+            <div className="carousel-wrapper flex w-full gap-2 xl:gap-8 ">
                 {images.map((item, index) => (
+                    <>
                     <motion.div
                         key={index}
-                        className="brand-image items-center"
+                        className="hidden xl:flex brand-image items-center "
                         variants={variants}
                         animate="animate"
                     >
-                        <Image src={item.image} alt='asus-brand' className='w-[232px] h-[48px]'/>
+                        <div className='w-[232px] h-[48px]'>
+
+                        <Image src={item.image} alt='asus-brand' className='w-full h-full object-cover'/>
+                        </div>
                     </motion.div>
+                    
+                    <motion.div
+                        key={index}
+                        className="flex xl:hidden brand-image items-center  "
+                        variants={variants}
+                        animate="animate2"
+                    >
+                        <div className='w-[232px] h-[48px]'>
+
+                        <Image src={item.image} alt='asus-brand' className='w-full h-full object-contain'/>
+                        </div>
+                    </motion.div>
+                    </>
                 ))}
             </div>
         </div>
