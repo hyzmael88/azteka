@@ -75,7 +75,7 @@ const Brands = () => {
                     >
                         <div className='w-[232px] h-[48px]'>
 
-                        <Image src={item.image} alt='asus-brand' className='w-full h-full object-contain'/>
+                        <Image src={item.image} alt='asus-brand' className='custpm-shadow w-full h-full object-contain'/>
                         </div>
                     </motion.div>
                     </>

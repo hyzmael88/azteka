@@ -1,6 +1,8 @@
 import React from 'react'
 import Banner from './Banner'
 import Products from './Products'
+import Shadow1 from './Shadows/Shadow1'
+import Shadow2 from './Shadows/Shadow2'
 
 function LayoutStore() {
   return (
@@ -13,6 +15,8 @@ function LayoutStore() {
          rounded-[7px]
          '> Tienda </button>
         </div>
+       {/*  <Shadow1/>
+        <Shadow2/> */}
     </div>
   )
 }

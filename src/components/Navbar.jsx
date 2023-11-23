@@ -38,7 +38,7 @@ const Navbar = () => {
           />
         </div>
         <div className="flex gap-4 mr-8">
-          <FaShoppingCart className="text-white text-[50px]" />
+          <FaShoppingCart className="text-white text-[35px]" />
           {
             visible ?
             <IoClose 
@@ -48,7 +48,7 @@ const Navbar = () => {
               <GiHamburgerMenu 
               
               onClick={()=>setVisible(!visible)}
-                className="text-white text-[50px] cursor-pointer" 
+                className="text-white text-[35px] cursor-pointer" 
                 />
             }
         </div>

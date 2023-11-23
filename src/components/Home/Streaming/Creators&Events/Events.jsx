@@ -19,7 +19,9 @@ function Events() {
                images.map((image, index) => {
                    return(
                        <div key={index} className='w-full h-full'>
-                           <Image src={image.image} alt="" className='w-full h-[161px] rounded-[7px]'/>
+                           <Image src={image.image} alt="" className='
+                           custom-shadow
+                           w-full h-[161px] rounded-[7px]'/>
                        </div>
                    )
                })

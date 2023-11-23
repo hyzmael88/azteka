@@ -25,7 +25,9 @@ function Creators() {
                images.map((image, index) => {
                    return(
                        <div key={index} className='w-full h-full'>
-                           <Image src={image.image} alt="" className='w-full h-[161px] rounded-[7px] object-cover'/>
+                           <Image src={image.image} alt="" className='w-full h-[97px] md:h-[161px] rounded-[7px] 
+                           custom-shadow
+                           object-cover'/>
                        </div>
                    )
                })

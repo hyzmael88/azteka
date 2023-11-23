@@ -11,7 +11,7 @@ function Videogames() {
         {img: valorant},
     ]
   return (
-    <div className=' h-[128px] flex flex-row items-center justify-between md:justify-start gap-8 '>
+    <div className=' h-[128px] flex flex-row items-center justify-center md:justify-start gap-8 '>
         <div className=' bg-[#08101D]  flex flex-row gap-8 rounded-[7px] px-6'>
 
             {
