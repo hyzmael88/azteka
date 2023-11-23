@@ -20,8 +20,8 @@ function Rewards() {
           <input
             type="text"
             placeholder="Ingresa tu correo"
-            className="input w-[400px] h-[81px] bg-transparent border-4
-                text-white header text-[20px] border-white rounded-l-[7px] text-center"
+            className="input w-[280px] md:w-[400px] h-[81px] bg-transparent border-4
+                text-white header text-[15px] md:text-[20px] border-white rounded-l-[7px] text-center"
           />
           <button
             className="button w-[90px] md:w-[118px] h-[81px] rounded-r-[7px] text-black bg-yellow-500 text-center

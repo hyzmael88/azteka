@@ -27,8 +27,9 @@ function Footer() {
                     <span className='text-white font-lato font-bold text-[16px] uppercase'>Teams</span>
                      
   </div>
-  <div className='bg-black  text-white flex flex-row justify-center items-center  w-full h-[77px]'>
-          <h2 className='header text-[26px] text-center'>Designed by jaizmora digital media</h2>
+  <div className='bg-black  text-white flex flex-row justify-center
+   items-center  w-full h-[77px]'>
+          <h2 className='header text-[20px] md:text-[26px] text-center'>Designed by jaizmora digital media</h2>
         </div>
 
  

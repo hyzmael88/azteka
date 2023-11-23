@@ -49,13 +49,15 @@ function Players() {
 },
     ]
   return (
-    <div className='w-full    mt-8'>
-        <div className='flex flex-row justify-center gap-8 ml-8'>
+    <div className='w-full mt-8'>
+        <div className='flex flex-row md:justify-center gap-8 md:ml-8 overflow-x-scroll  scrollbar-hide'>
             
      {
          players.map((item, index)=>(
              <div className='w-full h-full flex flex-col justify-center items-center' key={index}>
-                    <Image src={item.img} alt='player' className=' w-[246px] h-[246px] object-contain '/>
+                <div className='w-[246px] h-[246px]  '>
+                    <Image src={item.img} alt='player' className=' w-full h-full rounded-[7px] object-cover '/>
+                    </div>
                     <h2 className='text-white font-lato font-bold text-[16px] uppercase mt-4'>{item.name}</h2>
                     <p className='text-white font-lato font-light  text-[13px]  uppercase'>{item.ubication}</p>
                     <div className='flex flex-row gap-2 mt-2'>

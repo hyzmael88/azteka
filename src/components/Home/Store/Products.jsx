@@ -62,7 +62,7 @@ function Products() {
 
   return (
     <div>
-      <div className="w-full h-full flex flex-row justify-start gap-8 mt-8">
+      <div className="w-full h-full flex flex-row justify-start gap-8 mt-8 overflow-x-scroll scrollbar-hide">
         {products.map((product, index) => (
           <div
             key={index}

@@ -66,7 +66,8 @@ function Scores() {
  ]
 
   return (
-    <div className='w-full px-[10px] md:px-[24px] h-full flex flex-row gap-4 md:gap-8 mt-8 overflow-hidden '>
+    <div className='w-full px-[10px] md:px-[24px] h-full 
+    flex flex-row gap-4 md:gap-8 mt-8 overflow-x-scroll scrollbar-hide '>
         {
             scores.map((score, index) => (
                 <Score key={index} score={score}/>

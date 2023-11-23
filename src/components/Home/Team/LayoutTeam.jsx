@@ -10,7 +10,8 @@ function LayoutTeam() {
                     <Videogames/>
                     <div className='w-full h-[900px] md:h-[679px] relative'>
 
-                    <div className='w-full h-full  bg-[#08101D] rounded-[7px] absolute -top-9 overflow-hidden'>
+                    <div className='w-full h-full  bg-[#08101D] rounded-[7px] absolute -top-9
+                     overflow-hidden'>
                         <Players/>
                         <Trophies/>
                     </div>
