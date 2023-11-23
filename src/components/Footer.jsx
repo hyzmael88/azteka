@@ -5,7 +5,37 @@ import { FaFacebook, FaInstagram, FaTiktok, FaTwitch, FaTwitter, FaYoutube } fro
 
 function Footer() {
   return (
-    <div className='w-full h-[550px] bg-[#08101D] relative '>
+    <>
+<div className='flex md:hidden flex-col items-center justify-center
+ w-full h-full bg-[#08101D]'>
+  <div>
+  <Image src={logo} alt='logo' className='w-[247px] h-[223px] object-contain mt-8'/>
+  </div>
+  <div className='w-full flex flex-row justify-around items-center mt-8'>
+  <FaTwitch className='text-white text-[30px] mr-[16px]'/>
+          <FaYoutube className='text-white text-[30px] mr-[16px]'/>
+          <FaFacebook className='text-white text-[30px] mr-[16px]'/>
+          <FaInstagram className='text-white text-[30px] mr-[16px]'/>
+          <FaTwitter className='text-white text-[30px] mr-[16px]'/>
+          <FaTiktok className='text-white text-[30px] mr-[16px]'/>
+          
+  </div>
+  <div className='flex flex-col items-center gap-8 mb-8 mt-8'>
+                    <span className='text-white font-lato font-bold text-[16px] uppercase'>Home</span>
+                    <span className='text-white font-lato font-bold text-[16px] uppercase'>Shop</span>
+                    <span className='text-white font-lato font-bold text-[16px] uppercase'>Events</span>
+                    <span className='text-white font-lato font-bold text-[16px] uppercase'>Teams</span>
+                     
+  </div>
+  <div className='bg-black  text-white flex flex-row justify-center items-center  w-full h-[77px]'>
+          <h2 className='header text-[26px] text-center'>Designed by jaizmora digital media</h2>
+        </div>
+
+ 
+
+</div>
+
+    <div className='hidden md:flex w-full h-[550px] bg-[#08101D] relative '>
         <div className='w-full px-[24px] grid grid-cols-4 pt-20'>
             <div className='w-full '>
             <Image src={logo} alt='logo' className='w-[247px] h-[223px] object-contain'/>
@@ -53,6 +83,7 @@ function Footer() {
         </div>
 
     </div>
+    </>
   )
 }
 

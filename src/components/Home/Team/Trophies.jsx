@@ -15,14 +15,14 @@ for (let i = 0; i < 5; i++) {
     
 
   return (
-    <div className='w-full  flex flex-row ml-8 mt-20 '>
+    <div className='w-full  flex flex-col md:flex-row ml-8 mt-20 '>
         <div className='w-full h-full flex gap-3 '>
 {/* Trophies */}
     {trophieArray}
    
 
         </div>
-        <div className='w-full h-full flex flex-col j'>
+        <div className='w-full h-full flex flex-col '>
             <h3 className='header text-left'>
                 los mas grandes
             </h3>

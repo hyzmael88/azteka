@@ -5,12 +5,16 @@ import banner from '../../../assets/images/home/Store/banner.png'
 function Banner() {
   return (
     <div className='w-full  h-[549px] relative'>
-        <Image src={banner} alt="" className='w-full h-full rounded-[7px]'/>
-        <div className='absolute w-full h-full left-0 top-0 flex flex-col justify-center ml-[24px] gap-4 z-10'>
-        <h2 className='uppercase text-white header'>NEW FIRST KIT</h2>
-        <p className='text-white font-lato text-[16px] font-bold w-[486px]'>Lorem ipsum dolor sit amet,
+        <Image src={banner} alt="" className='w-full h-full object-cover rounded-[7px]'/>
+        <div className='absolute w-full h-full left-0 top-0 flex flex-col justify-end
+        
+        md:justify-center md:ml-[24px]
+        items-center
+        gap-4 z-10'>
+        <h2 className='uppercase text-white header text-center md:text-left'>NEW FIRST KIT</h2>
+        <p className='text-white font-lato text-[16px] text-center font-bold  md:w-[486px]'>Lorem ipsum dolor sit amet,
          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
-         <div className='flex flex-row gap-10'>
+         <div className='flex flex-row gap-10 mb-8'>
             <button className='bg-[#FFB202] 
              font-lato  text-white rounded-[7px] w-[163px] h-[35px] uppercase '>
                 LOREM </button>

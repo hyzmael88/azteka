@@ -4,7 +4,7 @@ import Products from './Products'
 
 function LayoutStore() {
   return (
-    <div className='w-full h-full px-[24px] mt-8'>
+    <div className='w-full h-full px-[10px] md:px-[24px] mt-8'>
         <Banner/>
         <Products/>
         <div className='flex flex-row justify-center mt-8 mb-8'>
