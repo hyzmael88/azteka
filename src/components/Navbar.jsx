@@ -29,7 +29,7 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false)
   return (
     <>
-      <nav className="w-full h-[145px] flex justify-between  items-center ">
+      <nav className="w-full h-[145px] flex xl:hidden justify-between  items-center ">
         <div className="ml-8">
           <Image
             src={Logo}
@@ -72,7 +72,7 @@ const Navbar = () => {
         )
       }
 
-      <nav className="hidden md:flex w-full items-center justify-between bg-[#02090B] py-4 px-6">
+      <nav className="hidden xl:flex w-full items-center justify-between bg-[#02090B] py-4 px-6">
         <div className="w-full flex items-center gap-4">
           {NavItems.map((item, index) => (
             <span

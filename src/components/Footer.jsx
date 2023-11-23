@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import logo from '../assets/images/Logo/logo.png'
-import { FaFacebook, FaInstagram, FaTiktok, FaTwitch, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaArrowUp, FaFacebook, FaInstagram, FaTiktok, FaTwitch, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 function Footer() {
   return (
@@ -26,6 +26,11 @@ function Footer() {
                     <span className='text-white font-lato font-bold text-[16px] uppercase'>Events</span>
                     <span className='text-white font-lato font-bold text-[16px] uppercase'>Teams</span>
                      
+  </div>
+  <div className='flex flex-row justify-center items-center mb-4 mt-4'> 
+    <div className='rounded-full w-[95px] h-[95px] flex justify-center items-center bg-[#21ECB5]'>
+      <FaArrowUp className='text-[#070B12] text-[40px] '/>
+    </div>
   </div>
   <div className='bg-black  text-white flex flex-row justify-center
    items-center  w-full h-[77px]'>
