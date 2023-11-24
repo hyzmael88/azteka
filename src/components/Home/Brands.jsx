@@ -2,10 +2,10 @@ import React from 'react';
 import { FaReact, FaAngular, FaVuejs, FaEmber, FaNodeJs, FaAccusoft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Asus from '../../assets/images/home/Brands/asus.svg'
-import Alien from '../../assets/images/home/Brands/Alien.svg'
-import Mercedez from '../../assets/images/home/Brands/Mercedez.svg'
-import Razer from '../../assets/images/home/Brands/Razer.svg'
-import Vertagear from '../../assets/images/home/Brands/Vertagear.svg'
+import Alien from '../../assets/images/home/Brands/alien.svg'
+import Mercedez from '../../assets/images/home/Brands/mercedez.svg'
+import Razer from '../../assets/images/home/Brands/razer.svg'
+import Vertagear from '../../assets/images/home/Brands/vertagear.svg'
 import Image from 'next/image';
 
 const Brands = () => {
