@@ -2,7 +2,7 @@ import React from 'react'
 import azteka from '../../../assets/images/home/Scores/azteka.png'
 import cloud9 from '../../../assets/images/home/Scores/cloud9.png'
 import vitality from '../../../assets/images/home/Scores/vitality.svg'
-import faze from '../../../assets/images/home/Scores/Faze.svg'
+import faze from '../../../assets/images/home/Scores/faze.svg'
 import Score from './Score'
 
 function Scores() {
