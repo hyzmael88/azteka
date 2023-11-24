@@ -43,7 +43,7 @@ const Navbar = () => {
             visible ?
             <IoClose 
             onClick={()=>setVisible(false)}
-              className="text-white text-[50px] cursor-pointer" />
+              className="text-white text-[35px] cursor-pointer" />
               :
               <GiHamburgerMenu 
               

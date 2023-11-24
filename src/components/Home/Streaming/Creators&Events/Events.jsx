@@ -21,7 +21,9 @@ function Events() {
                        <div key={index} className='w-full h-full'>
                            <Image src={image.image} alt="" className='
                            custom-shadow
-                           w-full h-[161px] rounded-[7px]'/>
+                           w-full h-[161px] 
+                           object-cover
+                           rounded-[7px]'/>
                        </div>
                    )
                })

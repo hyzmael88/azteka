@@ -12,7 +12,7 @@ function Layout() {
 
         <h3 className='header text-center custom-shadow-text'>Live</h3> <div className='bg-[#F00] custom-shadow rounded-full w-[26px] h-[26px]'></div>
       </div>
-    <div className='w-full h-full flex flex-col-reverse md:flex-row justify-between items-center '>
+    <div className='w-full h-full flex flex-col-reverse xl:flex-row justify-between items-center '>
         <Info/>
         <Stream/>
 

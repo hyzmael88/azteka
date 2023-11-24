@@ -50,7 +50,7 @@ function Players() {
     ]
   return (
     <div className='w-full mt-8'>
-        <div className='flex flex-row md:justify-center gap-8 md:ml-8 overflow-x-scroll  scrollbar-hide'>
+        <div className='flex flex-row xl:justify-center gap-8 md:ml-8 overflow-x-scroll  scrollbar-hide'>
             
      {
          players.map((item, index)=>(

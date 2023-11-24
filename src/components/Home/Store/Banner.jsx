@@ -10,7 +10,7 @@ function Banner() {
         rounded-[7px]'/>
         <div className='absolute w-full h-full left-0 top-0 flex flex-col justify-end
         
-        md:justify-center md:ml-[24px]
+        lg:justify-center md:ml-[24px]
         items-center
         gap-4 z-10'>
         <h2 className='uppercase text-white header text-center md:text-left custom-shadow-text'>NEW FIRST KIT</h2>

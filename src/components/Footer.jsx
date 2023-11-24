@@ -55,7 +55,7 @@ function Footer() {
 
 </div>
 
-    <div className='hidden md:flex w-full h-[550px] bg-[#08101D] relative '>
+    <div className='hidden md:flex md:flex-col w-full h-[550px] bg-[#08101D] relative '>
         <div className='w-full px-[24px] grid grid-cols-4 pt-20'>
             <div className='w-full '>
             <Image src={logo} alt='logo' className='w-[247px] h-[223px] object-contain'/>

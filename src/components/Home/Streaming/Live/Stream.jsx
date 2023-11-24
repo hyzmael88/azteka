@@ -12,11 +12,17 @@ function Stream() {
         </div>
         <p className='font-lato text-[16px] mb-4 md:hidden custom-shadow-text'>11K SEGUIDORES
     </p>
-        <Image src={stream} alt='stream-image' className='w-full h-[250px] md:h-[350px]
+    <div className='w-full h-[200px] md:h-[350px] '>
+
+        <Image src={stream} alt='stream-image' className='
+        w-full 
+        h-full
         custom-shadow
-        bg-blue-600 rounded-[7px]
+        rounded-[7px]
         object-cover
+        md:object-cover
         '/>
+        </div>
     </div>
   )
 }

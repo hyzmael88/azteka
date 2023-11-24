@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import rewards from "../../../assets/images/home/Rewards/Rewards.png";
 import { MdSend } from "react-icons/md";
+import Shadow1 from "./Shadows/Shadow1";
 
 function Rewards() {
   return (
@@ -32,6 +33,9 @@ function Rewards() {
           </button>
         </div>
       </div>
+
+    <Shadow1/>
+
     </div>
   );
 }
