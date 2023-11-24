@@ -6,8 +6,8 @@ function Score({score}) {
     console.log(score);
     console.log(score.team1logo);
     return (
-        <div className='w-full h-full rounded-[7px] bg-[#08101D] custom-shadow-score '>
-            <div className=' w-[331px] h-[204px]   flex flex-col items-center mt-4'>
+        <div className='w-[331px] h-[204px]  rounded-[7px] bg-[#08101D] custom-shadow-score '>
+            <div className=' w-full h-full  flex flex-col items-center mt-4'>
                 <h3 className='text-[16px] font-bold font-lato text-white uppercase custom-shadow-text'>{score.videogame}</h3>
                 <h4 className='text-[10px] font-bold font-lato text-white uppercase  custom-shadow-text'>{score.tournament}</h4>
                 <div className='w-full h-full flex flex-row justify-around'>

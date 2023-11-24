@@ -6,7 +6,7 @@ import Shadow2 from './Shadows/Shadow2'
 
 function LayoutStore() {
   return (
-    <div className='w-full h-full px-[10px] md:px-[24px] mt-8 relative'>
+    <div className='w-full h-full px-[10px] md:px-[24px] mt-8 relative overflow-hidden'>
         <Banner/>
         <Products/>
         <div className='flex flex-row justify-center mt-8 mb-8'>
@@ -16,7 +16,7 @@ function LayoutStore() {
          '> Tienda </button>
         </div>
         <Shadow1/>
-        <Shadow2/> 
+        <Shadow2/>
     </div>
   )
 }

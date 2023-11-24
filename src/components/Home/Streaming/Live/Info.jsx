@@ -31,7 +31,7 @@ function Info() {
         custom-shadow-text
         mt-4 mb-4 font-bold  '>¡Bienvenidos a mi rincón de diversión! 🐾🎮 Con 5 gatos como mis fieles asistentes (o jefes, depende del día), me aventuro en los reinos de League of Legends y Valorant, aunque a veces mezclo variedad.
              ¡Prepárate para risas, victorias y, por supuesto, momentos de inevitable manqueo! 😸🎉</p>
-             <div className='hidden md:flex flex-col '>
+             <div className='hidden xl:flex flex-col '>
                 {
                     time.map((time,index) =>(
 

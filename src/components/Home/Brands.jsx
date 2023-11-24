@@ -29,12 +29,12 @@ const Brands = () => {
 
     const variants = {
         animate: {
-            x: [0,-250],
+            x: [-500,0],
             transition: {
                 x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 15,
+                    duration: 30,
                 },
             },
         },
@@ -63,7 +63,7 @@ const Brands = () => {
                     >
                         <div className='w-[232px] h-[48px]'>
 
-                        <Image src={item.image} alt='asus-brand' className='w-full h-full object-cover'/>
+                        <Image src={item.image} alt='asus-brand' className='w-full h-full object-contain'/>
                         </div>
                     </motion.div>
                     
@@ -73,9 +73,9 @@ const Brands = () => {
                         variants={variants}
                         animate="animate2"
                     >
-                        <div className='w-[232px] h-[48px]'>
+                        <div className='w-[232px]  h-[48px]'>
 
-                        <Image src={item.image} alt='asus-brand' className='custpm-shadow w-full h-full object-contain'/>
+                        <Image src={item.image} alt='asus-brand' className='custom-shadow w-full h-full object-contain'/>
                         </div>
                     </motion.div>
                     </>
