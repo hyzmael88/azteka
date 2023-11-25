@@ -5,6 +5,9 @@ import vitality from '../../../assets/images/home/Scores/vitality.svg'
 import faze from '../../../assets/images/home/Scores/faze2.svg'
 import Score from './Score'
 
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 function Scores() {
  const scores = [
     {
@@ -65,15 +68,41 @@ function Scores() {
     },
  ]
 
+ const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
+  const variants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 }
+  };
+
   return (
-    <div className='w-full px-[10px] md:px-[24px] h-full 
-    flex flex-row gap-4 md:gap-8 mt-8 overflow-x-scroll scrollbar-hide '>
+    <motion.div className='w-full px-[10px] md:px-[24px] h-full 
+    flex flex-row gap-4 md:gap-8 mt-8 overflow-x-scroll scrollbar-hide '
+    ref={ref}
+    variants={variants}
+    initial="hidden"
+    animate={inView ? 'show' : 'hidden'}>
         {
             scores.map((score, index) => (
-                <Score key={index} score={score}/>
+                <motion.div key={index} variants={item}>
+                  <Score score={score}/>
+                </motion.div>
             ))
         }
-    </div>
+    </motion.div>
   )
 }
 
