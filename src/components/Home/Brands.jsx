@@ -54,9 +54,9 @@ const Brands = () => {
         <div className="carousel-container mt-8 mb-8">
             <div className="carousel-wrapper flex w-full gap-2 xl:gap-8 ">
                 {images.map((item, index) => (
-                    <>
+                    <div key={index}>
                     <motion.div
-                        key={index}
+                        
                         className="hidden xl:flex brand-image items-center "
                         variants={variants}
                         animate="animate"
@@ -78,7 +78,7 @@ const Brands = () => {
                         <Image src={item.image} alt='asus-brand' className='custom-shadow w-full h-full object-contain'/>
                         </div>
                     </motion.div>
-                    </>
+                    </div>
                 ))}
             </div>
         </div>

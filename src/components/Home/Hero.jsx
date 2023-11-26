@@ -10,7 +10,6 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      style={{ backgroundImage: 'url(path/to/background-image.jpg)' }}
     >
       <Image src={bg} alt="Logo"  className="w-full h-full object-cover absolute " />
       <motion.div className='w-full h-full flex flex-col justify-center items-center z-10'
