@@ -5,6 +5,10 @@ import product3 from "../../../assets/images/home/Store/product3.png";
 import product4 from "../../../assets/images/home/Store/product4.png";
 import Image from "next/image";
 
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+
 function Products() {
   const products = [
     {
@@ -52,45 +56,64 @@ function Products() {
   const renderStars = (rate) => {
     const roundedRate = Math.ceil(rate);
     const stars = [];
+    
 
     for (let i = 0; i < roundedRate; i++) {
-        stars.push(<span key={i} className="text-yellow-500 text-[30px]">&#9733;</span>);
-    }
+      stars.push(
+          <motion.span 
+              ref={ref}
+              key={i} 
+              className="text-yellow-500 text-[30px]"
+              initial={{ y: -50, opacity: 0 }}
+              animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+              transition={{ duration: 1, delay: i * 0.2 }}
+          >
+              &#9733;
+          </motion.span>
+      );
+  }
 
     return stars;
 };
+
+const { ref, inView } = useInView({
+  triggerOnce: true,
+});
 
   return (
     <div>
       <div className="w-full h-full flex flex-row justify-start gap-8 mt-8 overflow-x-scroll scrollbar-hide">
         {products.map((product, index) => (
-          <div
-            key={index}
-            className="w-full h-full flex flex-col items-center justify-center custom-shadow"
-          >
-            <Image
-              src={product.img}
-              alt=""
-              className="w-full h-full rounded-[7px] "
-            />
-            <div className="w-full h-[120px] bg-black flex flex-col">
-                <div className="flex flex-row gap-2 items-center">
-                    <div>
-                {renderStars(product.rate)}
-                </div>
-              <p className="text-white font-lato font-bold text-[20px]">({product.qtyrates})</p>
-                </div>
-              <div className="text-white w-full h-full flex flex-row justify-between items-end">
-                <p className="w-[190px] text-[23px] font-lato font-bold">
-                  {product.name}
-                </p>
-                  <div className="text-[23px] font-lato font-bold">
-                    ${product.price}
-                  
-                </div>
-              </div>
-            </div>
-          </div>
+         <motion.div
+         ref={ref}
+         key={index}
+         className="w-full h-full flex flex-col items-center justify-center custom-shadow"
+         initial={{ y: -50, opacity: 0 }}
+         animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+         transition={{ duration: 1, delay: index * 0.2 }}
+       >
+         <Image
+           src={product.img}
+           alt=""
+           className="w-full h-full rounded-[7px] "
+         />
+         <motion.div className="w-full h-[120px] bg-black flex flex-col">
+           <div className="flex flex-row gap-2 items-center">
+             <div>
+               {renderStars(product.rate)}
+             </div>
+             <p className="text-white font-lato font-bold text-[20px]">({product.qtyrates})</p>
+           </div>
+           <motion.div className="text-white w-full h-full flex flex-row justify-between items-end">
+             <p className="w-[190px] text-[23px] font-lato font-bold">
+               {product.name}
+             </p>
+             <div className="text-[23px] font-lato font-bold">
+               ${product.price}
+             </div>
+           </motion.div>
+         </motion.div>
+       </motion.div>
         ))}
       </div>
     </div>
