@@ -2,6 +2,8 @@ import Image from 'next/image'
 import React from 'react'
 import logo from '../assets/images/Logo/logo.png'
 import { FaArrowUp, FaFacebook, FaInstagram, FaTiktok, FaTwitch, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 
 
@@ -13,54 +15,100 @@ function Footer() {
       behavior: "smooth"
     });
   };
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+});
 
   return (
     <>
-<div className='flex md:hidden flex-col items-center justify-center
- w-full h-full bg-[#08101D]'>
-  <div>
-  <Image src={logo} alt='logo' className='w-[247px] h-[223px] object-contain mt-8'/>
-  </div>
-  <div className='w-full flex flex-row justify-around items-center mt-8'>
-  <FaTwitch className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          <FaYoutube className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          <FaFacebook className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          <FaInstagram className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          <FaTwitter className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          <FaTiktok className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          
-  </div>
-  <div className='flex flex-col items-center gap-8 mb-8 mt-8'>
-                    <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</span>
-                    <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</span>
-                    <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</span>
-                    <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</span>
-                     
-  </div>
-  <div className='flex flex-row justify-center items-center mb-4 mt-4'> 
-    <div 
-    onClick={scrollToTop}
-    className='rounded-full w-[95px] h-[95px] flex justify-center
-    custom-shadow items-center bg-[#21ECB5]'>
-      <FaArrowUp
-       className='text-[#070B12] text-[40px] custom-shadow-text '/>
-    </div>
-  </div>
-  <div className='bg-black  text-white custom-shadow-text flex flex-row justify-center
-   items-center  w-full h-[77px]'>
-          <h2 className='header text-[20px] md:text-[26px] text-center'>Designed by jaizmora digital media</h2>
+<motion.div 
+        ref={ref}
+        className='flex md:hidden flex-col items-center justify-center w-full h-full bg-[#08101D]'
+        initial={{ y: -50, opacity: 0 }}
+        animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+        transition={{ duration: 1 }}
+    >
+        <div>
+            <Image src={logo} alt='logo' className='w-[247px] h-[223px] object-contain mt-8'/>
         </div>
+        <motion.div 
+            className='w-full flex flex-row justify-around items-center mt-8'
+            initial={{ y: -50, opacity: 0 }}
+            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+        >
+            <FaTwitch className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+            <FaYoutube className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+            <FaFacebook className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+            <FaInstagram className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+            <FaTwitter className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+            <FaTiktok className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+        </motion.div>
+        <motion.div 
+            className='flex flex-col items-center gap-8 mb-8 mt-8'
+            initial={{ y: -50, opacity: 0 }}
+            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+        >
+            <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</span>
+            <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</span>
+            <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</span>
+            <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</span>
+        </motion.div>
+        <motion.div 
+        ref={ref}
+        className='flex flex-col items-center gap-8 mb-8 mt-8'
+        initial={{ y: -50, opacity: 0 }}
+        animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+        transition={{ duration: 1 }}
+    >
+        <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</span>
+        <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</span>
+        <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</span>
+        <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</span>
+    </motion.div>
+    <motion.div 
+        className='flex flex-row justify-center items-center mb-4 mt-4'
+        initial={{ y: -50, opacity: 0 }}
+        animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+    >
+        <div 
+            onClick={scrollToTop}
+            className='rounded-full w-[95px] h-[95px] flex justify-center custom-shadow items-center bg-[#21ECB5]'
+        >
+            <FaArrowUp className='text-[#070B12] text-[40px] custom-shadow-text'/>
+        </div>
+    </motion.div>
+    <motion.div 
+        className='bg-black text-white custom-shadow-text flex flex-row justify-center items-center w-full h-[77px]'
+        initial={{ y: -50, opacity: 0 }}
+        animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+        transition={{ duration: 1, delay: 0.4 }}
+    >
+        <h2 className='header text-[20px] md:text-[26px] text-center'>Designed by jaizmora digital media</h2>
+    </motion.div>
 
  
 
-</div>
+</motion.div>
 
-    <div className='hidden md:flex md:flex-col w-full h-[550px] bg-[#08101D] relative '>
-        <div className='w-full px-[24px] grid grid-cols-4 pt-20'>
+<motion.div 
+        ref={ref}
+        className='hidden md:flex md:flex-col w-full h-[550px] bg-[#08101D] relative'
+        initial={{ y: -50, opacity: 0 }}
+        animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+        transition={{ duration: 1 }}
+    >        <div className='w-full px-[24px] grid grid-cols-4 pt-20'>
             <div className='w-full '>
             <Image src={logo} alt='logo' className='w-[247px] h-[223px] object-contain'/>
             </div>
-            <div className='w-full  flex flex-col gap-8 text-center'>
+            <motion.div 
+                className='w-full flex flex-col gap-8 text-center'
+                initial={{ y: -50, opacity: 0 }}
+                animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+                transition={{ duration: 1, delay: 0.2 }}
+            >
                 
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Navigation</p>
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</p>
@@ -68,41 +116,59 @@ function Footer() {
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</p>
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</p>
                      
-                </div>
-            <div className='w-full  flex flex-col gap-8 text-center'>
-                
+                </motion.div>
+                <motion.div 
+                className='w-full flex flex-col gap-8 text-center'
+                initial={{ y: -50, opacity: 0 }}
+                animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+                transition={{ duration: 1, delay: 0.4 }}
+            >                
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Categories</p>
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</p>
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</p>
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</p>
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</p>
                      
-                </div>
-            <div className='w-full  flex flex-col gap-8 text-center'>
+                </motion.div>
+                <motion.div 
+                className='w-full flex flex-col gap-8 text-center'
+                initial={{ y: -50, opacity: 0 }}
+                animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+                transition={{ duration: 1, delay: 0.6 }}
+            >
                 
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>HELP and support</p>
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</p>
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</p>
                     <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</p>
                      
-                </div>
+                </motion.div>
 
         </div>
-        <div className='w-full flex flex-row justify-center items-center mt-20 gap-4'>
-          <FaTwitch className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          <FaYoutube className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          <FaFacebook className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          <FaInstagram className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          <FaTwitter className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          <FaTiktok className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-          
-        </div>
-        
-        <div className='bg-black  text-white custom-shadow-text flex flex-row justify-center items-center absolute bottom-0 w-full h-[77px]'>
-          <h2 className='header text-[26px]'>Designed by jaizmora digital media</h2>
-        </div>
+        <motion.div 
+        ref={ref}
+        className='w-full flex flex-row justify-center items-center mt-20 gap-4'
+        initial={{ y: -50, opacity: 0 }}
+        animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+        transition={{ duration: 1 }}
+    >
+        <FaTwitch className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+        <FaYoutube className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+        <FaFacebook className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+        <FaInstagram className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+        <FaTwitter className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+        <FaTiktok className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+    </motion.div>
+    <motion.div 
+        className='bg-black text-white custom-shadow-text flex flex-row justify-center items-center absolute bottom-0 w-full h-[77px]'
+        initial={{ y: 50, opacity: 0 }}
+        animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+    >
+        <h2 className='header text-[26px]'>Designed by jaizmora digital media</h2>
+    </motion.div>
 
-    </div>
+    </motion.div>
     </>
   )
 }

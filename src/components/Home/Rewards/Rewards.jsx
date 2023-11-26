@@ -4,20 +4,51 @@ import rewards from "../../../assets/images/home/Rewards/Rewards.png";
 import { MdSend } from "react-icons/md";
 import Shadow1 from "./Shadows/Shadow1";
 
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+
 function Rewards() {
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+});
+
   return (
     <div className="w-full h-full flex flex-col relative">
       <Image
         src={rewards}
         alt="rewards"
         className="w-[100%] h-[686px] md:h-[100%] object-cover"
-      />
-      <div className="w-full h-full flex flex-col justify-center items-center absolute left-0 z-10">
-        <h3 className="header custom-shadow-text text-center text-[23px] text-white">Suscribete y obten</h3>
-        <h3 className="header custom-shadow-text w-[394px] md:w-[772px] text-[33px] md:text-[56px] text-center text-[#76FFD4]">
+      /> <motion.div 
+      ref={ref}
+      className="w-full h-full flex flex-col justify-center items-center absolute left-0 z-10"
+      initial={{ y: -50, opacity: 0 }}
+      animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+      transition={{ duration: 1 }}
+  >
+      <motion.h3 
+          className="header custom-shadow-text text-center text-[23px] text-white"
+          initial={{ y: -50, opacity: 0 }}
+          animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+      >
+          Suscribete y obten
+      </motion.h3>
+      <motion.h3 
+          className="header custom-shadow-text w-[394px] md:w-[772px] text-[33px] md:text-[56px] text-center text-[#76FFD4]"
+          initial={{ y: -50, opacity: 0 }}
+          animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+      >
           Grandes recompensas
-        </h3>
-        <div className="flex flex-row mt-10">
+      </motion.h3>
+        <motion.div 
+                className="flex flex-row mt-10"
+                initial={{ y: -50, opacity: 0 }}
+                animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+                transition={{ duration: 1, delay: 0.6 }}
+            >
           <input
             type="text"
             placeholder="Ingresa tu correo"
@@ -31,8 +62,8 @@ function Rewards() {
           >
             <MdSend className="text-[50px]" />
           </button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
     <Shadow1/>
 

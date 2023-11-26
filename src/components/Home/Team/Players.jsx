@@ -7,7 +7,16 @@ import player5 from '../../../assets/images/home/Players/player5.png'
 import Image from 'next/image'
 import { FaTiktok, FaTwitch, FaTwitter } from 'react-icons/fa'
 
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+
 function Players() {
+
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+    });
+
     const players = [
     {img: player1,
     name: "Cecilia acosta",
@@ -54,18 +63,49 @@ function Players() {
             
      {
          players.map((item, index)=>(
-             <div className='w-full h-full flex flex-col justify-center items-center' key={index}>
-                <div className='w-[246px] h-[246px]  '>
-                    <Image src={item.img} alt='player' className=' w-full h-full rounded-[7px] custom-shadow object-cover '/>
-                    </div>
-                    <h2 className='text-white font-lato font-bold text-[16px] uppercase mt-4'>{item.name}</h2>
-                    <p className='text-white font-lato font-light  text-[13px]  uppercase  custom-shadow-text'>{item.ubication}</p>
-                    <div className='flex flex-row gap-2 mt-2'>
+            <motion.div 
+            ref={ref}
+            className='w-full h-full flex flex-col justify-center items-center'
+            key={index}
+            initial={{ y: -50, opacity: 0 }}
+            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+            transition={{ duration: 1, delay: index * 0.2 }}
+        >
+            <motion.div 
+                            className='w-[246px] h-[246px]'
+                            initial={{ y: -50, opacity: 0 }}
+                            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                        >
+                            <Image src={item.img} alt='player' className=' w-full h-full rounded-[7px] custom-shadow object-cover '/>
+                        </motion.div>
+                        <motion.h2 
+                            className='text-white font-lato font-bold text-[16px] uppercase mt-4'
+                            initial={{ y: -50, opacity: 0 }}
+                            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+                            transition={{ duration: 1, delay: 0.4 }}
+                        >
+                            {item.name}
+                        </motion.h2>
+                        <motion.p 
+                            className='text-white font-lato font-light  text-[13px]  uppercase  custom-shadow-text'
+                            initial={{ y: -50, opacity: 0 }}
+                            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+                            transition={{ duration: 1, delay: 0.6 }}
+                        >
+                            {item.ubication}
+                        </motion.p>
+                        <motion.div 
+                            className='flex flex-row gap-2 mt-2'
+                            initial={{ y: -50, opacity: 0 }}
+                            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+                            transition={{ duration: 1, delay: 0.8 }}
+                        >
                         <a href={item.twitch}><FaTwitch className='text-white custom-shadow-text'/></a>
                         <a href={item.twitter}><FaTwitter className='text-white custom-shadow-text'/></a>
                         <a href={item.tiktok}><FaTiktok className='text-white custom-shadow-text'/></a>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             ))
      }
             </div>
