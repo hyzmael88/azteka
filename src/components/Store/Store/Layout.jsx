@@ -12,7 +12,7 @@ function Layout() {
   return (
     <div className='w-full h-full '>
         <div className='w-full h-full flex flex-col items-center'>
-            <button className='py-[16px] px-[10px] bg-[#21ECB5] uppercase flex items-center mt-20 mb-20'>
+            <button className='py-[16px] px-[10px] bg-[#21ECB5] uppercase flex items-center mt-20 mb-20 custom-shadow'>
             <BiSortAlt2 /> <p className='font-lato font-bold text-[13px]'>Order by: &nbsp; {order}</p>
             </button>
             <Products/>

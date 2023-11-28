@@ -139,8 +139,8 @@ function Products() {
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
   return (
-    <div className='w-full h-full bg-[#191A1B]'>
-        <div className='w-full px-[10px] h-full grid grid-cols-2 gap-4 mt-4'>
+    <div className='w-full h-full flex flex-col bg-[#191A1B] mb-20 custom-shadow'>
+        <div className='w-full px-[10px] h-full grid grid-cols-2 gap-4 mt-4 mb-4'>
         {products.map((product, index) => (
          <motion.div
          ref={ref}
@@ -174,7 +174,19 @@ function Products() {
        </motion.div>
         ))}
         </div>
-
+            <div className='flex flex-row justify-center items-center'>
+                    <div>
+                        <button className='py-[16px] px-[10px] bg-[#054A59] hover:bg-[#21ECB5]
+                        text-white hover:text-black
+                        uppercase flex items-center
+                        rounded-[7px]
+                        mt-10 mb-10
+                        custom-shadow
+                        '>
+                        <p className='font-lato font-bold text-[13px]'>Load More</p>
+                        </button>
+                    </div>
+            </div>
     </div>
   )
 }
