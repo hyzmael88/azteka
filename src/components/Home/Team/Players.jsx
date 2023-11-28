@@ -9,6 +9,10 @@ import { FaTiktok, FaTwitch, FaTwitter } from 'react-icons/fa'
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useMediaQuery } from 'react-responsive';
+
+
+
 
 
 function Players() {
@@ -16,6 +20,9 @@ function Players() {
     const { ref, inView } = useInView({
         triggerOnce: true,
     });
+
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+
 
     const players = [
     {img: player1,
@@ -68,13 +75,13 @@ function Players() {
             className='w-full h-full flex flex-col justify-center items-center'
             key={index}
             initial={{ y: -50, opacity: 0 }}
-            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+            animate={isMobile ||inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
             transition={{ duration: 1, delay: index * 0.2 }}
         >
             <motion.div 
                             className='w-[246px] h-[246px]'
                             initial={{ y: -50, opacity: 0 }}
-                            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+                            animate={isMobile ||inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
                         >
                             <Image src={item.img} alt='player' className=' w-full h-full rounded-[7px] custom-shadow object-cover '/>

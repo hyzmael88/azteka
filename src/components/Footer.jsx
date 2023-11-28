@@ -5,6 +5,7 @@ import { FaArrowUp, FaFacebook, FaInstagram, FaTiktok, FaTwitch, FaTwitter, FaYo
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+import { useMediaQuery } from 'react-responsive';
 
 
 function Footer() {
@@ -18,6 +19,7 @@ function Footer() {
   const { ref, inView } = useInView({
     triggerOnce: true,
 });
+const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
   return (
     <>
@@ -25,7 +27,7 @@ function Footer() {
         ref={ref}
         className='flex md:hidden flex-col items-center justify-center w-full h-full bg-[#08101D]'
         initial={{ y: -50, opacity: 0 }}
-        animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+        animate={isMobile || inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
         transition={{ duration: 1 }}
     >
         <div>
@@ -34,7 +36,7 @@ function Footer() {
         <motion.div 
             className='w-full flex flex-row justify-around items-center mt-8'
             initial={{ y: -50, opacity: 0 }}
-            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+            animate={isMobile || inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
         >
             <FaTwitch className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
@@ -47,7 +49,7 @@ function Footer() {
         <motion.div 
             className='flex flex-col items-center gap-8 mb-8 mt-8'
             initial={{ y: -50, opacity: 0 }}
-            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+            animate={isMobile ||inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
         >
             <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</span>
@@ -55,22 +57,11 @@ function Footer() {
             <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</span>
             <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</span>
         </motion.div>
-        <motion.div 
-        ref={ref}
-        className='flex flex-col items-center gap-8 mb-8 mt-8'
-        initial={{ y: -50, opacity: 0 }}
-        animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-        transition={{ duration: 1 }}
-    >
-        <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</span>
-        <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</span>
-        <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</span>
-        <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</span>
-    </motion.div>
+        
     <motion.div 
         className='flex flex-row justify-center items-center mb-4 mt-4'
         initial={{ y: -50, opacity: 0 }}
-        animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+        animate={isMobile ||inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
     >
         <div 
