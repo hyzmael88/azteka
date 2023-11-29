@@ -26,7 +26,8 @@ import Product from './Product'
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam.",
         img: product1,
         rate: 4.7,
-        qtyrates: 128
+        qtyrates: 128,
+        category: "shoes",
       },
       {
         id: 2,
@@ -37,7 +38,8 @@ import Product from './Product'
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam.",
         img: product2,
         rate: 4.5,
-        qtyrates: 113
+        qtyrates: 113,
+        category: "t-shirts",
       },
       {
         id: 3,
@@ -48,7 +50,8 @@ import Product from './Product'
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam.",
         img: product3,
         rate: 4.2,
-        qtyrates: 14
+        qtyrates: 14,
+        category: "controllers",
       },
       {
         id: 4,
@@ -59,7 +62,8 @@ import Product from './Product'
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam.",
         img: product4,
         rate: 4.1,
-        qtyrates: 48
+        qtyrates: 48,
+        category:  "hoodies",
       },
       {
         id: 5,
@@ -70,7 +74,8 @@ import Product from './Product'
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam.",
         img: product5,
         rate: 4.1,
-        qtyrates: 48
+        qtyrates: 48,
+        category: "hoodies",
       },
       {
         id: 6,
@@ -81,7 +86,8 @@ import Product from './Product'
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam.",
         img: product6,
         rate: 4.1,
-        qtyrates: 48
+        qtyrates: 48,
+        category: "hoodies",
       },
       {
         id: 7,
@@ -92,7 +98,8 @@ import Product from './Product'
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam.",
         img: product7,
         rate: 4.1,
-        qtyrates: 48
+        qtyrates: 48,
+        category: "hoodies",
       },
       {
         id: 8,
@@ -103,7 +110,8 @@ import Product from './Product'
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam.",
         img: product9,
         rate: 4.1,
-        qtyrates: 48
+        qtyrates: 48,
+        category: "hoodies",
       },
       {
         id: 9,
@@ -114,7 +122,8 @@ import Product from './Product'
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam.",
         img: product10,
         rate: 4.1,
-        qtyrates: 48
+        qtyrates: 48,
+        category: "hoodies",
       },
       ];
 function Products() {

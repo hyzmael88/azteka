@@ -4,17 +4,22 @@ import { products } from "../../components/Store/Store/Products";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoShare } from "react-icons/io5";
+import SimilarProducts from "@/components/Store/Store/SimilarProducts";
+import Banner from "@/components/Store/Store/Banner";
 
 function Product() {
   const router = useRouter();
   const { productSlug } = router.query;
 
-  const [size, setSize] = useState("xs");
+  const [size, setSize] = useState("XS");
   const [counter, setCounter] = useState(0);
 
   // Buscar el producto por el productSlug en el arreglo Products
   const product = products.find(
     (product) => product.productSlug === productSlug
+  );
+  const similarProducts = products.filter(
+    (product) => product.category === product.category
   );
 
   return (
@@ -40,42 +45,52 @@ function Product() {
             {/* sizes */}
             <div className="w-full flex items-center justify-center gap-4">
               <div
-                className="w-[50px] h-[50px] bg-[#054A59] hover:bg-[#21ECB5]
-                                     flex flex-col
-                                     justify-center items-center text-center hover:text-white
-                                     cursor-pointer "
+                className={`w-[50px] h-[50px] flex flex-col justify-center items-center text-center cursor-pointer ${
+                  size == "XS"
+                    ? "bg-[#21ECB5]"
+                    : "bg-[#054A59] hover:bg-[#21ECB5] hover:text-white"
+                }`}
+                onClick={() => setSize("XS")}
               >
                 XS
               </div>
               <div
-                className="w-[50px] h-[50px] bg-[#054A59] hover:bg-[#21ECB5]
-                                     flex flex-col
-                                     justify-center items-center text-center hover:text-white
-                                     cursor-pointer "
+                className={`w-[50px] h-[50px] flex flex-col justify-center items-center text-center cursor-pointer ${
+                  size == "S"
+                    ? "bg-[#21ECB5]"
+                    : "bg-[#054A59] hover:bg-[#21ECB5] hover:text-white"
+                }`}
+                onClick={() => setSize("S")}
               >
                 S
               </div>
               <div
-                className="w-[50px] h-[50px] bg-[#054A59] hover:bg-[#21ECB5]
-                                     flex flex-col
-                                     justify-center items-center text-center hover:text-white
-                                     cursor-pointer "
+                className={`w-[50px] h-[50px] flex flex-col justify-center items-center text-center cursor-pointer ${
+                  size == "M"
+                    ? "bg-[#21ECB5]"
+                    : "bg-[#054A59] hover:bg-[#21ECB5] hover:text-white"
+                }`}
+                onClick={() => setSize("M")}
               >
                 M
               </div>
               <div
-                className="w-[50px] h-[50px] bg-[#054A59] hover:bg-[#21ECB5]
-                                     flex flex-col
-                                     justify-center items-center text-center hover:text-white
-                                     cursor-pointer "
+                className={`w-[50px] h-[50px] flex flex-col justify-center items-center text-center cursor-pointer ${
+                  size == "L"
+                    ? "bg-[#21ECB5]"
+                    : "bg-[#054A59] hover:bg-[#21ECB5] hover:text-white"
+                }`}
+                onClick={() => setSize("L")}
               >
                 L
               </div>
               <div
-                className="w-[50px] h-[50px] bg-[#054A59] hover:bg-[#21ECB5]
-                                     flex flex-col
-                                     justify-center items-center text-center hover:text-white
-                                     cursor-pointer "
+                className={`w-[50px] h-[50px] flex flex-col justify-center items-center text-center cursor-pointer ${
+                  size == "XL"
+                    ? "bg-[#21ECB5]"
+                    : "bg-[#054A59] hover:bg-[#21ECB5] hover:text-white"
+                }`}
+                onClick={() => setSize("XL")}
               >
                 XL
               </div>
@@ -89,8 +104,9 @@ function Product() {
               >
                 <div
                   className="bg-[#054A59] w-[36px] h-[36px] flex items-center justify-center
-                                        text-white text-[30px] pb-2 hover:bg-[#21ECB5]
+                                        text-white text-[30px] pb-2 hover:bg-[#21ECB5] cursor-pointer
                                         "
+                  onClick={() => counter > 0 && setCounter(counter - 1)}
                 >
                   -
                 </div>
@@ -103,8 +119,9 @@ function Product() {
                 <div
                   className="bg-[#054A59] w-[36px] h-[36px] flex items-center justify-center
                                         text-white text-[30px] pb-2
-                                        hover:bg-[#21ECB5]
+                                        hover:bg-[#21ECB5] cursor-pointer
                                         "
+                  onClick={() => setCounter(counter + 1)}
                 >
                   +
                 </div>
@@ -134,10 +151,23 @@ function Product() {
               </p>
             </button>
             <button
-              className="bg-[#D9D9D9] h-[54px] w-[208px] 
-                        rounded-[7px]
-                        "
-            >
+  className="bg-[#D9D9D9] h-[54px] w-[208px] 
+            rounded-[7px]
+            "
+  onClick={() => {
+    if (navigator.share) {
+      navigator.share({
+        title: product.name,
+        text: product.description,
+        url: window.location.href,
+      })
+      .catch((error) => console.log('Error sharing', error));
+    } else {
+      // fallback for browsers that do not support navigator.share
+      console.log('Web Share API not supported');
+    }
+  }}
+>
               <p
                 className="text-black font-lato font-bold text-[20px] uppercase 
                             flex justify-center items-center gap-2"
@@ -160,10 +190,22 @@ function Product() {
               nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
               con
             </p>
+            <hr className="w-full h-[1.5px] bg-[#46484A] mb-5" />
             <p className="text-white font-lato font-bold text-[20px] uppercase">
               Details
             </p>
+            <p className="text-white font-lato text-[13px]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              con
+            </p>
+            <hr className="w-full h-[1.5px] bg-[#46484A] mb-5" />
           </div>
+          {/* similar products */}
+          <SimilarProducts similarProducts={similarProducts} />
+          {/* Banner */}
+          <Banner />
         </div>
       ) : (
         <div className="w-full h-full flex flex-col justify-center items-center ">
