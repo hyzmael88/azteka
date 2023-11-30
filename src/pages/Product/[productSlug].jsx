@@ -21,9 +21,23 @@ function Product() {
   const similarProducts = products.filter(
     (product) => product.category === product.category
   );
+  const photosExtra = [
+    {
+      img: <div className="bg-gray-500 w-[300px] h-[300px] object-cover"></div>,
+    },
+    {
+      img: <div className="bg-gray-500 w-[300px] h-[300px] object-cover"></div>,
+    },
+    {
+      img: <div className="bg-gray-500 w-[300px] h-[300px] object-cover"></div>,
+    },
+    {
+      img: <div className="bg-gray-500 w-[300px] h-[300px] object-cover"></div>,
+    },
+  ];
 
   return (
-    <div>
+    <div className="w-full h-full">
       {product ? (
         <div
           className="w-full h-full flex flex-col
@@ -36,10 +50,23 @@ function Product() {
             <Image
               src={product.img}
               alt={product.name}
-              className="w-full h-[516px] xl:h-full  object-cover"
+              className="w-full h-[516px] xl:h-full object-cover"
             />
-            <div className="w-full h-full flex items-center">
               {/* aqui van las fotos extra */}
+              <div className="w-full h-full flex items-center justify-start xl:justify-center
+               gap-4 mt-4 overflow-x-scroll scrollbar-hide
+               
+               ">
+                {photosExtra.map((photo, index) => (
+                  <div
+                    key={index}
+                    className="w-full h-full cursor-pointer
+                    
+                     "
+                  >
+                    {photo.img}
+                  </div>
+                ))}
             </div>
           </div>
           <div
