@@ -12,19 +12,19 @@ const Navbar = () => {
   const NavItems = [
     {
       title: "Home",
-      url: "#",
+      url: "/",
     },
     {
       title: "About",
-      url: "#",
+      url: "/About",
     },
     {
-      title: "Shop",
-      url: "#",
+      title: "Store",
+      url: "/Store",
     },
     {
       title: "Contact",
-      url: "#",
+      url: "Contact",
     },
   ];
 
@@ -68,13 +68,13 @@ const Navbar = () => {
     >
       <div className="w-full flex flex-col items-center gap-8">
         {NavItems.map((item, index) => (
-          <span
-            href="#"
+          <a
+            href={item.url}
             key={index}
             className="text-white header text-[18px]"
           >
             {item.title}
-          </span>
+          </a>
         ))}
       </div>
     </motion.div>
