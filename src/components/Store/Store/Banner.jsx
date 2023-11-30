@@ -8,10 +8,12 @@ function Banner() {
     
     const router = useRouter();
   return (
-    <div className='h-[150px] w-full mt-10 relative'>
+    <div className='h-[150px] xl:h-[529px] w-full mt-10 relative'>
         <Image src={banner} alt="banner" className='w-full h-full object-cover' />
         <div className='absolute top-0 w-full h-full flex flex-col justify-center items-end '>
-            <h4 className='header text-[12px] w-[200px] '>
+            <h4 className='header text-[12px] w-[200px] xl:w-[625px]
+            xl:text-[32px]
+            '>
                 descubre nuestros productos mas nuevos
             </h4>
             
@@ -20,7 +22,10 @@ function Banner() {
              onClick={()=>router.push('/Store')}
              className='py-[11px] px-[60px] bg-[#FFB202]
              font-lato font-bold text-[14px] md:text-[24px]
-             mt-4 md:mt-0
+             xl:text-[36px]
+             xl:w-[625px]
+             xl:h-[70px]
+             mt-4 
              custom-shadow
              rounded-[7px] uppercase text-black'
             >

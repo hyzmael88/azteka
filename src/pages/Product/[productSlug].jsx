@@ -25,25 +25,37 @@ function Product() {
   return (
     <div>
       {product ? (
-        <div className="w-full h-full flex flex-col items-center px-[20px] ">
-          <Image
-            src={product.img}
-            alt={product.name}
-            className="w-full h-[516px] object-cover"
-          />
-          <div className="w-full h-full flex items-center">
-            {/* aqui van las fotos extra */}
+        <div
+          className="w-full h-full flex flex-col
+         xl:flex-row xl:gap-4
+          items-center px-[20px]
+         
+         "
+        >
+          <div className="flex flex-col w-full h-full ">
+            <Image
+              src={product.img}
+              alt={product.name}
+              className="w-full h-[516px] xl:h-full  object-cover"
+            />
+            <div className="w-full h-full flex items-center">
+              {/* aqui van las fotos extra */}
+            </div>
           </div>
-          <div className="w-full h-full flex flex-col items-center">
-            <h2 className="text-white header text-[32px] w-[448px] text-center">
+          <div
+            className="w-full xl:w-[50%] h-full flex flex-col
+           items-center xl:items-start 
+           "
+          >
+            <h2 className="text-white header text-[32px] w-[448px] text-center xl:text-left">
               {product.name}
             </h2>
-            <p className="font-lato text-[31px] font-bold text-[#9B9B9B] text-center">
+            <p className="font-lato text-[31px] font-bold text-[#9B9B9B] text-center xl:text-left">
               ${product.price}
             </p>
             <p className="font-lato text-[20px] text-white">{size}</p>
             {/* sizes */}
-            <div className="w-full flex items-center justify-center gap-4">
+            <div className="w-full flex items-center justify-center xl:justify-start gap-4">
               <div
                 className={`w-[50px] h-[50px] flex flex-col justify-center items-center text-center cursor-pointer ${
                   size == "XS"
@@ -95,7 +107,7 @@ function Product() {
                 XL
               </div>
             </div>
-            <div className="w-full h-full flex justify-center items-center">
+            <div className="w-full h-full flex justify-center xl:justify-start items-center">
               <div
                 className="w-[172px] h-[36px] text-center flex justify-between
                                      items-center relative
@@ -127,91 +139,94 @@ function Product() {
                 </div>
               </div>
             </div>
-          </div>
-          {/* buttons */}
-          <div
-            className="w-full h-full flex flex-col items-center  gap-4
+
+            {/* buttons */}
+            <div
+              className="w-full h-full flex flex-col items-center xl:items-start  gap-4
                         mb-5 
                         "
-          >
-            <button className="bg-gradient-to-t  from-[#054A59] to-[#21ECB5] h-[54px] w-full ">
-              <p
-                className="text-white font-lato font-bold text-[20px] uppercase 
+            >
+              <button className="bg-gradient-to-t  from-[#054A59] to-[#21ECB5] h-[54px] w-full ">
+                <p
+                  className="text-white font-lato font-bold text-[20px] uppercase 
                             flex justify-center items-center gap-2"
-              >
-                add to cart <FaShoppingCart className="text-white" />
-              </p>
-            </button>
-            <button className="bg-gradient-to-t  from-[#E7902A] to-[#FFB202] h-[54px] w-full ">
-              <p
-                className="text-white font-lato font-bold text-[20px] uppercase 
+                >
+                  add to cart <FaShoppingCart className="text-white" />
+                </p>
+              </button>
+              <button className="bg-gradient-to-t  from-[#E7902A] to-[#FFB202] h-[54px] w-full ">
+                <p
+                  className="text-white font-lato font-bold text-[20px] uppercase 
                             flex justify-center items-center gap-2"
-              >
-                buy now <FaShoppingCart className="text-white" />
-              </p>
-            </button>
-            <button
-  className="bg-[#D9D9D9] h-[54px] w-[208px] 
+                >
+                  buy now <FaShoppingCart className="text-white" />
+                </p>
+              </button>
+              <button
+                className="bg-[#D9D9D9] h-[54px] w-[208px] 
             rounded-[7px]
             "
-  onClick={() => {
-    if (navigator.share) {
-      navigator.share({
-        title: product.name,
-        text: product.description,
-        url: window.location.href,
-      })
-      .catch((error) => console.log('Error sharing', error));
-    } else {
-      // fallback for browsers that do not support navigator.share
-      console.log('Web Share API not supported');
-    }
-  }}
->
-              <p
-                className="text-black font-lato font-bold text-[20px] uppercase 
-                            flex justify-center items-center gap-2"
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator
+                      .share({
+                        title: product.name,
+                        text: product.description,
+                        url: window.location.href,
+                      })
+                      .catch((error) => console.log("Error sharing", error));
+                  } else {
+                    // fallback for browsers that do not support navigator.share
+                    console.log("Web Share API not supported");
+                  }
+                }}
               >
-                share <IoShare className="text-black" />
-              </p>
-            </button>
-          </div>
-          <hr className="w-full h-[1.5px] bg-[#46484A] mb-5" />
-          {/* Info */}
-          <div className="w-full h-full flex flex-col items-center gap-4">
-            <div className="flex flex-row items-center relative">
-              <span className="text-white font-lato font-bold text-[20px] uppercase">
-                description
-              </span>
+                <p
+                  className="text-black font-lato font-bold text-[20px] uppercase 
+                            flex justify-center items-center gap-2"
+                >
+                  share <IoShare className="text-black" />
+                </p>
+              </button>
             </div>
-            <p className="text-white font-lato text-[13px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              con
-            </p>
             <hr className="w-full h-[1.5px] bg-[#46484A] mb-5" />
-            <p className="text-white font-lato font-bold text-[20px] uppercase">
-              Details
-            </p>
-            <p className="text-white font-lato text-[13px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              con
-            </p>
-            <hr className="w-full h-[1.5px] bg-[#46484A] mb-5" />
+            {/* Info */}
+            <div className="w-full h-full flex flex-col items-center xl:items-start gap-4">
+              <div className="flex flex-row items-center relative">
+                <span className="text-white font-lato font-bold text-[20px] uppercase">
+                  description
+                </span>
+              </div>
+              <p className="text-white font-lato text-[13px]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo con
+              </p>
+              <hr className="w-full h-[1.5px] bg-[#46484A] mb-5" />
+              <p className="text-white font-lato font-bold text-[20px] uppercase">
+                Details
+              </p>
+              <p className="text-white font-lato text-[13px]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo con
+              </p>
+              <hr className="w-full h-[1.5px] bg-[#46484A] mb-5" />
+            </div>
           </div>
-          {/* similar products */}
-          <SimilarProducts similarProducts={similarProducts} />
-          {/* Banner */}
-          <Banner />
         </div>
       ) : (
         <div className="w-full h-full flex flex-col justify-center items-center ">
           <p className="text-white header">Producto no encontrado</p>
         </div>
       )}
+
+      {/* similar products */}
+      <SimilarProducts similarProducts={similarProducts} />
+      {/* Banner */}
+      <Banner />
     </div>
   );
 }
