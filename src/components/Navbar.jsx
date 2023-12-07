@@ -88,13 +88,13 @@ const Navbar = () => {
 >
   <div className="w-full flex items-center gap-4">
     {NavItems.map((item, index) => (
-      <span
-        href="#"
+      <a
+        href={item.url}
         key={index}
         className="text-white header text-[18px]"
       >
         {item.title}
-      </span>
+      </a>
     ))}
   </div>
   <div className="w-full flex justify-center items-center">

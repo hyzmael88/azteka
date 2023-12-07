@@ -6,6 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { IoShare } from "react-icons/io5";
 import SimilarProducts from "@/components/Store/Store/SimilarProducts";
 import Banner from "@/components/Store/Store/Banner";
+import Shadow1 from "@/components/Product/Shadows/Shadow1";
 
 function Product() {
   const router = useRouter();
@@ -37,7 +38,7 @@ function Product() {
   ];
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full relative overflow-hidden">
       {product ? (
         <div
           className="w-full h-full flex flex-col
@@ -258,6 +259,7 @@ function Product() {
       <SimilarProducts similarProducts={similarProducts} />
       {/* Banner */}
       <Banner />
+      <Shadow1/>
     </div>
   );
 }

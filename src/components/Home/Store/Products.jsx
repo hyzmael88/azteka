@@ -117,7 +117,9 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
          <Image
            src={product.img}
            alt=""
-           className="w-full h-[250px] rounded-[7px] "
+           className="w-[400px] h-[250px] lg:h-[500px] rounded-[7px]
+           object-cover
+           "
          />
          <motion.div className="w-full h-[120px] bg-black flex flex-col">
            <div className="flex flex-row gap-2 items-center">

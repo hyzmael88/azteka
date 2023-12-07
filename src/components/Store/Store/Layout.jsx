@@ -18,7 +18,7 @@ function Layout() {
     ] 
   return (
     <div className='w-full h-full '>
-        <div className='w-full h-full flex flex-col items-center'>
+        <div className='w-full h-full flex flex-col items-center relative overflow-hidden'>
             <button
             onClick={()=>setOpen(!open)}
             className={`
@@ -56,6 +56,7 @@ function Layout() {
             </button>
             <Products/>
         </div>
+
     </div>
   )
 }

@@ -17,7 +17,7 @@ function LayoutStore() {
         className='bg-[#FFB202] w-[250px] py-[15px] px-[91px] font-lato
          font-bold uppercase text-[23px]
          rounded-[7px] custom-shadow
-         '> Store </button>
+         '> Store </button> 
         </div>
         <Shadow1/>
         <Shadow2/>
