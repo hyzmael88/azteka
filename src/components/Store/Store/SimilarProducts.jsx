@@ -54,7 +54,7 @@ function SimilarProducts({similarProducts}) {
             <Image
               src={product.img}
               alt=""
-              className="w-full h-full lg:h-[250px] rounded-[7px]"
+              className="w-full h-[250px] rounded-[7px]"
             />
             <motion.div className="w-full h-[120px] bg-black flex flex-col">
               <div className="flex flex-row gap-2 items-center">

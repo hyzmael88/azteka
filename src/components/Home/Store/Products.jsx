@@ -100,21 +100,24 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
   return (
     <div>
-      <div className="w-full h-full flex flex-row justify-start gap-8 mt-8 overflow-x-scroll scrollbar-hide">
+      <div className="w-full h-full flex flex-row justify-start gap-8 mt-8 
+      overflow-x-scroll scrollbar-hide"
+      ref={ref}
+      >
         {products.map((product, index) => (
          <motion.div
-         ref={ref}
+         
          key={index}
          className="w-full h-full flex flex-col items-center justify-center custom-shadow"
          initial={{ y: -50, opacity: 0 }}
-         animate={isMobile || inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+         animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
          transition={{ duration: 1, delay: index * 0.2 }}
          onClick={() => router.push(`/Product/${product.productSlug}`)}
        >
          <Image
            src={product.img}
            alt=""
-           className="w-full h-full rounded-[7px] "
+           className="w-full h-[250px] rounded-[7px] "
          />
          <motion.div className="w-full h-[120px] bg-black flex flex-col">
            <div className="flex flex-row gap-2 items-center">
