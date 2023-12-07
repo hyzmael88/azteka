@@ -55,7 +55,7 @@ function Product() {
               "
             />
               {/* aqui van las fotos extra */}
-              <div className="w-full h-full flex flex-row items-center justify-start xl:justify-center
+              <div className="w-full h-full flex flex-row items-center justify-start lg:justify-center
                gap-4 mt-4 overflow-x-scroll scrollbar-hide
                
                ">
