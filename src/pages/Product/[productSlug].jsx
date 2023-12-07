@@ -74,7 +74,9 @@ function Product() {
            items-center xl:items-start 
            "
           >
-            <h2 className="text-white header text-[32px] w-[448px] text-center xl:text-left">
+            <h2 className="text-white header text-[24px] xl:text-[32px] w-[350px]
+            mt-4 xl:mt-0
+            xl:w-[448px] text-center xl:text-left">
               {product.name}
             </h2>
             <p className="font-lato text-[31px] font-bold text-[#9B9B9B] text-center xl:text-left">
