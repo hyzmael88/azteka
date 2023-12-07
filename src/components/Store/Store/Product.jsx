@@ -65,10 +65,10 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
         <p className="text-white font-lato font-bold text-[12px] xl:text-[20px]">({product.qtyrates})</p>
       </div>
       <motion.div className="text-white w-full h-full flex flex-row justify-between items-end">
-        <p className="w-[108px] md:w-[150px] xl:w-[190px] text-[12px]  md:text-[18px] xl:text-[23px] font-lato font-bold">
+        <p className="w-[108px] md:w-[150px] xl:w-[190px] text-[14px]  md:text-[18px] xl:text-[23px] font-lato font-bold">
           {product.name}
         </p>
-        <div className=" text-[12px]  md:text-[18px] xl:text-[23px] font-lato font-bold">
+        <div className=" text-[14px]  md:text-[18px] xl:text-[23px] font-lato font-bold">
           ${product.price}
         </div>
       </motion.div>

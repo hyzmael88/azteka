@@ -23,16 +23,16 @@ function Product() {
   );
   const photosExtra = [
     {
-      img: <div className="bg-gray-500 w-[300px] xl:w-[100px] h-[300px] xl:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] lg:w-[100px] h-[300px] lg:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] xl:w-[100px] h-[300px] xl:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] lg:w-[100px] h-[300px] lg:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] xl:w-[100px] h-[300px] xl:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] lg:w-[100px] h-[300px] lg:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] xl:w-[100px] h-[300px] xl:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] lg:w-[100px] h-[300px] lg:h-[100px] object-cover"></div>,
     },
   ];
 
@@ -41,8 +41,8 @@ function Product() {
       {product ? (
         <div
           className="w-full h-full flex flex-col
-         xl:flex-row xl:gap-4
-          items-center px-[20px]
+         lg:flex-row xl:gap-4
+          items-center px-[20px] lg:items-start
          
          "
         >
