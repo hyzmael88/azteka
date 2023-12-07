@@ -34,7 +34,9 @@ function SimilarProducts({similarProducts}) {
 
 
   return (
-    <div className="w-full h-full flex flex-row justify-start gap-8 mt-8 overflow-x-scroll scrollbar-hide "
+    <div className="w-full h-full flex flex-row justify-start gap-8 mt-8 overflow-x-scroll scrollbar-hide
+    px-4
+    "
     ref={ref}
     >
       {similarProducts.map((product, index) => {
@@ -52,7 +54,7 @@ function SimilarProducts({similarProducts}) {
             <Image
               src={product.img}
               alt=""
-              className="w-full h-full rounded-[7px]"
+              className="w-full h-full lg:h-[250px] rounded-[7px]"
             />
             <motion.div className="w-full h-[120px] bg-black flex flex-col">
               <div className="flex flex-row gap-2 items-center">

@@ -23,16 +23,16 @@ function Product() {
   );
   const photosExtra = [
     {
-      img: <div className="bg-gray-500 w-[300px] h-[300px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] xl:w-[100px] h-[300px] xl:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] h-[300px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] xl:w-[100px] h-[300px] xl:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] h-[300px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] xl:w-[100px] h-[300px] xl:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] h-[300px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] xl:w-[100px] h-[300px] xl:h-[100px] object-cover"></div>,
     },
   ];
 
@@ -46,23 +46,23 @@ function Product() {
          
          "
         >
-          <div className="flex flex-col w-full h-full ">
+          <div className="w-full h-full flex flex-col  ">
             <Image
               src={product.img}
               alt={product.name}
-              className="w-full h-[516px] lg:h-[350px] xl:h-full object-cover
+              className="w-full h-[516px] lg:h-[350px] xl:h-[50vh] object-cover
               lg:object-contain
               "
             />
               {/* aqui van las fotos extra */}
-              <div className="w-full h-full flex items-center justify-start xl:justify-center
+              <div className="w-full h-full flex flex-row items-center justify-start xl:justify-center
                gap-4 mt-4 overflow-x-scroll scrollbar-hide
                
                ">
                 {photosExtra.map((photo, index) => (
                   <div
                     key={index}
-                    className="w-full h-full cursor-pointer
+                    className=" cursor-pointer flex flex-row justify-center items-center
                     
                      "
                   >
