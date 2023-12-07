@@ -66,22 +66,22 @@ function Players() {
     ]
   return (
     <div className='w-full mt-8'>
-        <div className='flex flex-row xl:justify-center gap-8 md:ml-8 overflow-x-scroll  scrollbar-hide'>
+        <div ref={ref} className='flex flex-row xl:justify-center gap-8 md:ml-8 overflow-x-scroll  scrollbar-hide'>
             
      {
          players.map((item, index)=>(
             <motion.div 
-            ref={ref}
+            
             className='w-full h-full flex flex-col justify-center items-center'
             key={index}
             initial={{ y: -50, opacity: 0 }}
-            animate={isMobile ||inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
             transition={{ duration: 1, delay: index * 0.2 }}
         >
             <motion.div 
                             className='w-[246px] h-[246px]'
                             initial={{ y: -50, opacity: 0 }}
-                            animate={isMobile ||inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+                            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
                         >
                             <Image src={item.img} alt='player' className=' w-full h-full rounded-[7px] custom-shadow object-cover '/>
