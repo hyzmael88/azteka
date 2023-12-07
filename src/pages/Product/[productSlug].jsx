@@ -50,7 +50,9 @@ function Product() {
             <Image
               src={product.img}
               alt={product.name}
-              className="w-full h-[516px] xl:h-full object-cover"
+              className="w-full h-[516px] lg:h-[350px] xl:h-full object-cover
+              lg:object-contain
+              "
             />
               {/* aqui van las fotos extra */}
               <div className="w-full h-full flex items-center justify-start xl:justify-center
