@@ -27,13 +27,15 @@ function SimilarProducts({similarProducts}) {
     return stars;
   };
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
+
   return (
     <div className="w-full h-full flex flex-row justify-start gap-8 mt-8 overflow-x-scroll scrollbar-hide">
       {similarProducts.map((product, index) => {
-        const { ref, inView } = useInView({
-          triggerOnce: true,
-        });
-
+       
         return (
           <motion.div
             ref={ref}
