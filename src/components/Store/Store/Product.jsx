@@ -19,7 +19,7 @@ function Product({product, index}) {
           <motion.span 
               ref={ref}
               key={i} 
-              className="text-yellow-500 text-[20px]"
+              className="text-yellow-500 text-[20px] md:text-[25px]"
               initial={{ y: -50, opacity: 0 }}
               animate={isMobile || inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
               transition={{ duration: 1, delay: i * 0.2 }}
@@ -55,7 +55,9 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
       alt=""
       className="w-full h-full rounded-[7px] object-cover "
     />
-    <motion.div className="w-full h-[120px] bg-black flex flex-col">
+    <motion.div className="w-full h-[120px] bg-black flex flex-col
+    px-3
+    ">
       <div className="flex flex-row  gap-2 items-center">
         <div>
           {renderStars(product.rate)}
@@ -63,10 +65,10 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
         <p className="text-white font-lato font-bold text-[12px] xl:text-[20px]">({product.qtyrates})</p>
       </div>
       <motion.div className="text-white w-full h-full flex flex-row justify-between items-end">
-        <p className="w-[108px] xl:w-[190px] text-[12px] xl:text-[23px] font-lato font-bold">
+        <p className="w-[108px] md:w-[150px] xl:w-[190px] text-[12px]  md:text-[18px] xl:text-[23px] font-lato font-bold">
           {product.name}
         </p>
-        <div className=" text-[12px] xl:text-[23px] font-lato font-bold">
+        <div className=" text-[12px]  md:text-[18px] xl:text-[23px] font-lato font-bold">
           ${product.price}
         </div>
       </motion.div>
