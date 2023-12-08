@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import product1 from "../../../assets/images/home/Store/product1.png";
 import product2 from "../../../assets/images/home/Store/product2.png";
 import product3 from "../../../assets/images/home/Store/product3.png";
@@ -101,6 +101,29 @@ function Products() {
   const scrollContainerRef = useRef(null);
   
 
+  const [isAtLeft, setIsAtLeft] = useState(true);
+  const [isAtRight, setIsAtRight] = useState(false);
+
+  
+  useEffect(() => {
+    const checkScrollPosition = () => {
+      setIsAtLeft(scrollContainerRef.current.scrollLeft === 0);
+      setIsAtRight(
+        scrollContainerRef.current.scrollLeft + scrollContainerRef.current.offsetWidth >=
+        scrollContainerRef.current.scrollWidth - 1
+      );
+    };
+
+    checkScrollPosition();
+    scrollContainerRef.current.addEventListener('scroll', checkScrollPosition);
+
+    return () => {
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.removeEventListener('scroll', checkScrollPosition);
+      }
+    };
+  }, []);
+
   const rightDesplacement = () => {
     scrollContainerRef.current.scrollLeft += 200;
   }
@@ -110,25 +133,33 @@ function Products() {
   }
 
   return (
-    <div className="w-full h-full relative">
-      <div className="w-[70px] h-[70px] bg-red-500 rounded-full absolute top-[150px] left-0 z-10 flex flex-col justify-center items-center"
-      onClick={leftDesplacement}
-      >
-         <FaArrowLeft className="text-white text-[30px]"/>
+     <div className="w-full h-full relative"
+     
+     ref={inViewRef}
+     >
+      {!isAtLeft && (
+        <div
+          className="w-[70px] h-[70px] bg-red-500 rounded-full absolute top-[150px] left-0 z-10 flex flex-col justify-center items-center cursor-pointer"
+          onClick={leftDesplacement}
+        >
+          <FaArrowLeft className="text-white text-[30px]" />
         </div>
-      <div className="w-[70px] h-[70px] bg-red-500 rounded-full absolute top-[150px] right-0 z-10 flex flex-col justify-center items-center"
-       onClick={rightDesplacement}
-      >
-         <FaArrowRight className="text-white text-[30px]"/>
+      )}
+      {!isAtRight && (
+        <div
+          className="w-[70px] h-[70px] bg-red-500 rounded-full absolute top-[150px] right-0 z-10 flex flex-col justify-center items-center cursor-pointer"
+          onClick={rightDesplacement}
+        >
+          <FaArrowRight className="text-white text-[30px]" />
         </div>
+      )}
       <div
         className="w-full h-full flex flex-row justify-start gap-8 mt-8 
       overflow-x-scroll scrollbar-hide "
-      ref={scrollContainerRef}
+        ref={scrollContainerRef}
       >
         {products.map((product, index) => (
           <motion.div
-          ref={inViewRef}
             key={index}
             className="w-full h-full flex flex-col items-center justify-center custom-shadow cursor-pointer"
             initial={{ y: -50, opacity: 0 }}
