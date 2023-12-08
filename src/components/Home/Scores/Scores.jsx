@@ -139,7 +139,7 @@ function Scores() {
       )}
       {!isAtRight && (
         <div
-          className="w-[70px] h-[70px] bg-red-500 rounded-full absolute top-[90px] right-0 z-10 flex flex-col justify-center items-center cursor-pointer"
+          className="hidden w-[70px] h-[70px] bg-red-500 rounded-full absolute top-[90px] right-0 z-10 lg:flex flex-col justify-center items-center cursor-pointer"
           onClick={rightDesplacement}
         >
           <FaArrowRight className="text-white text-[30px]" />

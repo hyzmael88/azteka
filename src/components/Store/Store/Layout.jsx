@@ -28,7 +28,7 @@ function Layout() {
             :
             'h-[300px]'
             }
-            w-[200px] bg-[#21ECB5] uppercase  mt-20 mb-20 custom-shadow`}>
+            w-[200px] bg-[#21ECB5] uppercase  mt-20 xl:mt-14 mb-20 xl:mb-14 custom-shadow`}>
            <div className='flex flex-col'>
             <div className='flex flex-row justify-center items-center'>
             <BiSortAlt2 /> <p className='font-lato font-bold text-[13px]'>Order by: &nbsp; {order}</p>

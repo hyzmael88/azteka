@@ -11,9 +11,9 @@ function Hero() {
 
   return (
     <div className='w-full h-full'>
-      <div className='w-full h-screen lg:h-[70vh] xl:h-[50vh] relative'>
+      <div className='w-full h-screen lg:h-[70vh] xl:h-[70vh] relative'>
         <Image
-          src={isLg ? herohot : hero}
+          src={isLg ? hero : herohot}
           alt='hero'
           className='w-full h-full object-cover custom-shadow rounded-[7px]'
         />

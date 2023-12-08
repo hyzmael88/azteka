@@ -133,7 +133,7 @@ function Products() {
     
   return (
     <div className='w-full h-full flex flex-col bg-[#191A1B] mb-20 custom-shadow px-[10px] pt-[10px] '>
-        <div className='w-full px-[10px] h-full grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4 mb-4'>
+        <div className='w-full lg:px-[10px] h-full grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4 mb-4'>
         {products.map((product, index) => (
          <Product key={index} product={product} index={index}/>
         ))}

@@ -7,7 +7,7 @@ import Shadow2 from '@/components/Store/Store/Shadows/Shadow2'
 
 function Store() {
   return (
-    <div className='w-full h-full relative overflow-hidden px-[24px]'>
+    <div className='w-full h-full relative overflow-hidden px-[10px] lg:px-[24px]'>
         <Hero/>
         <Layout/>
         

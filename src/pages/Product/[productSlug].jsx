@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { products } from "../../components/Store/Store/Products";
 import Image from "next/image";
@@ -24,18 +24,26 @@ function Product() {
   );
   const photosExtra = [
     {
-      img: <div className="bg-gray-500 w-[300px] md:w-[150px] lg:w-[100px] h-[300px] md:h-[150px] lg:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[150px] lg:w-[100px] h-[150px] lg:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] md:w-[150px] lg:w-[100px] h-[300px] md:h-[150px] lg:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[150px] lg:w-[100px] h-[150px] lg:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] md:w-[150px] lg:w-[100px] h-[300px] md:h-[150px] lg:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[150px] lg:w-[100px] h-[150px] lg:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] md:w-[150px] lg:w-[100px] h-[300px] md:h-[150px] lg:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[150px] lg:w-[100px] h-[150px] lg:h-[100px] object-cover"></div>,
     },
   ];
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    setSelectedImage(product?.img);
+  }, [])
+  
+
 
   return (
     <div className="w-full h-full relative overflow-hidden">
@@ -49,7 +57,10 @@ function Product() {
         >
           <div className="w-full h-full flex flex-col  ">
             <Image
-              src={product.img}
+              src={selectedImage?
+                selectedImage:
+                product.img
+              }
               alt={product.name}
               className="w-full h-[516px] lg:h-[350px] xl:h-[50vh] object-cover
               lg:object-contain
@@ -66,6 +77,7 @@ function Product() {
                     className=" cursor-pointer flex flex-row justify-center items-center
                     
                      "
+                     onClick={() => setSelectedImage(photo.img)}
                   >
                     {photo.img}
                   </div>
