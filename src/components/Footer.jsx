@@ -25,7 +25,8 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     <>
 <motion.div 
         ref={ref}
-        className='flex md:hidden flex-col items-center justify-center w-full h-full bg-[#08101D]'
+        className='flex md:hidden flex-col items-center justify-center w-full h-full
+        bg-[#08101D]'
         initial={{ y: -50, opacity: 0 }}
         animate={isMobile || inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
         transition={{ duration: 1 }}

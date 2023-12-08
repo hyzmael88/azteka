@@ -22,7 +22,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='w-full h-full overflow-x-hidden'>
+      <main className='w-full h-full overflow-x-hidden max-w-[1444px] mx-auto'>
      
      <Hero/>
      <Brands/>

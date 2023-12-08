@@ -30,10 +30,11 @@ function Stream() {
       >
         11K SEGUIDORES
       </motion.p>
-      <div className='w-full h-[200px] md:h-[350px] lg:h-[500px] '>
+      <div className='w-full h-[200px] md:h-[350px] lg:h-[500px] flex flex-col xl:justify-center '>
         <Image src={stream} alt='stream-image' className='
         w-full 
         h-full
+        xl:h-[400px]
         custom-shadow
         rounded-[7px]
         object-cover
