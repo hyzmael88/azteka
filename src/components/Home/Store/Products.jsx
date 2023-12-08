@@ -10,7 +10,6 @@ import { useMediaQuery } from "react-responsive";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { BiLeftArrow } from "react-icons/bi";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function Products() {
@@ -90,53 +89,50 @@ function Products() {
     return stars;
   };
 
- 
-
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   const { ref: inViewRef, inView } = useInView({
     triggerOnce: true,
   });
-  
+
   const scrollContainerRef = useRef(null);
-  
 
   const [isAtLeft, setIsAtLeft] = useState(true);
   const [isAtRight, setIsAtRight] = useState(false);
 
-  
   useEffect(() => {
     const checkScrollPosition = () => {
       setIsAtLeft(scrollContainerRef.current.scrollLeft === 0);
       setIsAtRight(
-        scrollContainerRef.current.scrollLeft + scrollContainerRef.current.offsetWidth >=
-        scrollContainerRef.current.scrollWidth - 1
+        scrollContainerRef.current.scrollLeft +
+          scrollContainerRef.current.offsetWidth >=
+          scrollContainerRef.current.scrollWidth - 1
       );
     };
 
     checkScrollPosition();
-    scrollContainerRef.current.addEventListener('scroll', checkScrollPosition);
+    scrollContainerRef.current.addEventListener("scroll", checkScrollPosition);
 
     return () => {
       if (scrollContainerRef.current) {
-        scrollContainerRef.current.removeEventListener('scroll', checkScrollPosition);
+        scrollContainerRef.current.removeEventListener(
+          "scroll",
+          checkScrollPosition
+        );
       }
     };
   }, []);
 
   const rightDesplacement = () => {
     scrollContainerRef.current.scrollLeft += 200;
-  }
-  
+  };
+
   const leftDesplacement = () => {
     scrollContainerRef.current.scrollLeft -= 200;
-  }
+  };
 
   return (
-     <div className="w-full h-full relative"
-     
-     ref={inViewRef}
-     >
+    <div className="w-full h-full relative" ref={inViewRef}>
       {!isAtLeft && (
         <div
           className="w-[70px] h-[70px] bg-red-500 rounded-full absolute top-[150px] left-0 z-10 flex flex-col justify-center items-center cursor-pointer"

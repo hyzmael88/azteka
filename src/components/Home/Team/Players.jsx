@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from "react";
+
 import player1 from '../../../assets/images/home/Players/player1.png'
 import player2 from '../../../assets/images/home/Players/player2.png'
 import player3 from '../../../assets/images/home/Players/player3.png'
 import player4 from '../../../assets/images/home/Players/player4.png'
 import player5 from '../../../assets/images/home/Players/player5.png'
 import Image from 'next/image'
-import { FaTiktok, FaTwitch, FaTwitter } from 'react-icons/fa'
+import { FaArrowLeft, FaArrowRight, FaTiktok, FaTwitch, FaTwitter } from 'react-icons/fa'
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -17,12 +18,48 @@ import { useMediaQuery } from 'react-responsive';
 
 function Players() {
 
-    const { ref, inView } = useInView({
+    const { ref: inViewRef, inView } = useInView({
         triggerOnce: true,
-    });
+      });
+    
 
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
+    const scrollContainerRef = useRef(null);
+
+    const [isAtLeft, setIsAtLeft] = useState(true);
+    const [isAtRight, setIsAtRight] = useState(false);
+  
+    useEffect(() => {
+      const checkScrollPosition = () => {
+        setIsAtLeft(scrollContainerRef.current.scrollLeft === 0);
+        setIsAtRight(
+          scrollContainerRef.current.scrollLeft +
+            scrollContainerRef.current.offsetWidth >=
+            scrollContainerRef.current.scrollWidth - 1
+        );
+      };
+  
+      checkScrollPosition();
+      scrollContainerRef.current.addEventListener("scroll", checkScrollPosition);
+  
+      return () => {
+        if (scrollContainerRef.current) {
+          scrollContainerRef.current.removeEventListener(
+            "scroll",
+            checkScrollPosition
+          );
+        }
+      };
+    }, []);
+  
+    const rightDesplacement = () => {
+      scrollContainerRef.current.scrollLeft += 200;
+    };
+  
+    const leftDesplacement = () => {
+      scrollContainerRef.current.scrollLeft -= 200;
+    };
 
     const players = [
     {img: player1,
@@ -65,8 +102,24 @@ function Players() {
 },
     ]
   return (
-    <div className='w-full mt-8'>
-        <div ref={ref} className='flex flex-row xl:justify-center gap-8 md:ml-8 overflow-x-scroll  scrollbar-hide'>
+    <div className='w-full mt-8' ref={inViewRef}>
+         {!isAtLeft && (
+        <div
+          className="w-[70px] h-[70px] bg-red-500 rounded-full absolute top-[150px] left-0 z-10 flex flex-col justify-center items-center cursor-pointer"
+          onClick={leftDesplacement}
+        >
+          <FaArrowLeft className="text-white text-[30px]" />
+        </div>
+      )}
+      {!isAtRight && (
+        <div
+          className="w-[70px] h-[70px] bg-red-500 rounded-full absolute top-[150px] right-0 z-10 flex flex-col justify-center items-center cursor-pointer"
+          onClick={rightDesplacement}
+        >
+          <FaArrowRight className="text-white text-[30px]" />
+        </div>
+      )}
+        <div   ref={scrollContainerRef} className='flex flex-row xl:justify-center gap-8 md:ml-8 overflow-x-scroll  scrollbar-hide'>
             
      {
          players.map((item, index)=>(

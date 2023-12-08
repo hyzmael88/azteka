@@ -24,16 +24,16 @@ function Product() {
   );
   const photosExtra = [
     {
-      img: <div className="bg-gray-500 w-[300px] lg:w-[100px] h-[300px] lg:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] md:w-[150px] lg:w-[100px] h-[300px] md:h-[150px] lg:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] lg:w-[100px] h-[300px] lg:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] md:w-[150px] lg:w-[100px] h-[300px] md:h-[150px] lg:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] lg:w-[100px] h-[300px] lg:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] md:w-[150px] lg:w-[100px] h-[300px] md:h-[150px] lg:h-[100px] object-cover"></div>,
     },
     {
-      img: <div className="bg-gray-500 w-[300px] lg:w-[100px] h-[300px] lg:h-[100px] object-cover"></div>,
+      img: <div className="bg-gray-500 w-[300px] md:w-[150px] lg:w-[100px] h-[300px] md:h-[150px] lg:h-[100px] object-cover"></div>,
     },
   ];
 
@@ -56,7 +56,7 @@ function Product() {
               "
             />
               {/* aqui van las fotos extra */}
-              <div className="w-full h-full flex flex-row items-center justify-start lg:justify-center
+              <div className="w-full h-full flex flex-row items-center justify-start md:justify-center
                gap-4 mt-4 overflow-x-scroll scrollbar-hide
                
                ">
