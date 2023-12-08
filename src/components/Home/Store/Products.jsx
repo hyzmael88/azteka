@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import product1 from "../../../assets/images/home/Store/product1.png";
 import product2 from "../../../assets/images/home/Store/product2.png";
 import product3 from "../../../assets/images/home/Store/product3.png";
@@ -6,15 +6,14 @@ import product4 from "../../../assets/images/home/Store/product4.png";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from "react-responsive";
 
-
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { BiLeftArrow } from "react-icons/bi";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function Products() {
-
   const products = [
     {
       id: 1,
@@ -62,83 +61,106 @@ function Products() {
       img: product4,
       rate: 4.1,
       qtyrates: 48,
-      category:  "hoodies",
+      category: "hoodies",
     },
-    ];
+  ];
 
-    const router= useRouter();
+  const router = useRouter();
 
   const renderStars = (rate) => {
     const roundedRate = Math.ceil(rate);
     const stars = [];
-    
 
     for (let i = 0; i < roundedRate; i++) {
       stars.push(
-          <motion.span 
-              ref={ref}
-              key={i} 
-              className="text-yellow-500 text-[30px]"
-              initial={{ y: -50, opacity: 0 }}
-              animate={isMobile || inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-              transition={{ duration: 1, delay: i * 0.2 }}
-          >
-              &#9733;
-          </motion.span>
+        <motion.span
+          key={i}
+          className="text-yellow-500 text-[30px]"
+          initial={{ y: -50, opacity: 0 }}
+          animate={
+            isMobile || inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }
+          }
+          transition={{ duration: 1, delay: i * 0.2 }}
+        >
+          &#9733;
+        </motion.span>
       );
-  }
+    }
 
     return stars;
-};
+  };
 
-const { ref, inView } = useInView({
-  triggerOnce: true,
-});
+ 
 
-const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
+  const { ref: inViewRef, inView } = useInView({
+    triggerOnce: true,
+  });
+  
+  const scrollContainerRef = useRef(null);
+  
+
+  const rightDesplacement = () => {
+    scrollContainerRef.current.scrollLeft += 200;
+  }
+  
+  const leftDesplacement = () => {
+    scrollContainerRef.current.scrollLeft -= 200;
+  }
 
   return (
-    <div>
-      <div className="w-full h-full flex flex-row justify-start gap-8 mt-8 
-      overflow-x-scroll scrollbar-hide"
-      ref={ref}
+    <div className="w-full h-full relative">
+      <div className="w-[70px] h-[70px] bg-red-500 rounded-full absolute top-[150px] left-0 z-10 flex flex-col justify-center items-center"
+      onClick={leftDesplacement}
+      >
+         <FaArrowLeft className="text-white text-[30px]"/>
+        </div>
+      <div className="w-[70px] h-[70px] bg-red-500 rounded-full absolute top-[150px] right-0 z-10 flex flex-col justify-center items-center"
+       onClick={rightDesplacement}
+      >
+         <FaArrowRight className="text-white text-[30px]"/>
+        </div>
+      <div
+        className="w-full h-full flex flex-row justify-start gap-8 mt-8 
+      overflow-x-scroll scrollbar-hide "
+      ref={scrollContainerRef}
       >
         {products.map((product, index) => (
-         <motion.div
-         
-         key={index}
-         className="w-full h-full flex flex-col items-center justify-center custom-shadow cursor-pointer"
-         initial={{ y: -50, opacity: 0 }}
-         animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-         transition={{ duration: 1, delay: index * 0.2 }}
-         onClick={() => router.push(`/Product/${product.productSlug}`)}
-       >
-         <Image
-  src={product.img}
-  alt=""
-  width={400} // adjust as needed
-  height={250} // adjust as needed
-  quality={75} // adjust as needed
-  className="w-[400px] h-[250px] xl:h-[300px] rounded-[7px] object-cover"
-/>
-         <motion.div className="w-full h-[120px] bg-black flex flex-col">
-           <div className="flex flex-row gap-2 items-center">
-             <div>
-               {renderStars(product.rate)}
-             </div>
-             <p className="text-white font-lato font-bold text-[20px]">({product.qtyrates})</p>
-           </div>
-           <motion.div className="text-white w-full h-full flex flex-row justify-between items-end">
-             <p className="w-[190px] text-[23px] font-lato font-bold">
-               {product.name}
-             </p>
-             <div className="text-[23px] font-lato font-bold">
-               ${product.price}
-             </div>
-           </motion.div>
-         </motion.div>
-       </motion.div>
+          <motion.div
+          ref={inViewRef}
+            key={index}
+            className="w-full h-full flex flex-col items-center justify-center custom-shadow cursor-pointer"
+            initial={{ y: -50, opacity: 0 }}
+            animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+            transition={{ duration: 1, delay: index * 0.2 }}
+            onClick={() => router.push(`/Product/${product.productSlug}`)}
+          >
+            <Image
+              src={product.img}
+              alt=""
+              width={400} // adjust as needed
+              height={250} // adjust as needed
+              quality={75} // adjust as needed
+              className="w-[400px] h-[250px] xl:h-[300px] rounded-[7px] object-cover"
+            />
+            <motion.div className="w-full h-[120px] bg-black flex flex-col">
+              <div className="flex flex-row gap-2 items-center">
+                <div>{renderStars(product.rate)}</div>
+                <p className="text-white font-lato font-bold text-[20px]">
+                  ({product.qtyrates})
+                </p>
+              </div>
+              <motion.div className="text-white w-full h-full flex flex-row justify-between items-end">
+                <p className="w-[190px] text-[23px] font-lato font-bold">
+                  {product.name}
+                </p>
+                <div className="text-[23px] font-lato font-bold">
+                  ${product.price}
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
     </div>
