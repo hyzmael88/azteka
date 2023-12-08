@@ -115,12 +115,13 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
          onClick={() => router.push(`/Product/${product.productSlug}`)}
        >
          <Image
-           src={product.img}
-           alt=""
-           className="w-[400px] h-[250px] xl:h-[300px] rounded-[7px]
-           object-cover
-           "
-         />
+  src={product.img}
+  alt=""
+  width={400} // adjust as needed
+  height={250} // adjust as needed
+  quality={75} // adjust as needed
+  className="w-[400px] h-[250px] xl:h-[300px] rounded-[7px] object-cover"
+/>
          <motion.div className="w-full h-[120px] bg-black flex flex-col">
            <div className="flex flex-row gap-2 items-center">
              <div>
