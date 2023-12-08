@@ -40,12 +40,12 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
             animate={isMobile || inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
         >
-            <FaTwitch className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-            <FaYoutube className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-            <FaFacebook className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-            <FaInstagram className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-            <FaTwitter className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-            <FaTiktok className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+            <FaTwitch className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150custom-shadow-text text-[30px] mr-[16px]'/>
+            <FaYoutube className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text text-[30px] mr-[16px]'/>
+            <FaFacebook className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text text-[30px] mr-[16px]'/>
+            <FaInstagram className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text text-[30px] mr-[16px]'/>
+            <FaTwitter className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text text-[30px] mr-[16px]'/>
+            <FaTiktok className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text text-[30px] mr-[16px]'/>
         </motion.div>
         <motion.div 
             className='flex flex-col items-center gap-8 mb-8 mt-8'
@@ -53,10 +53,10 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
             animate={isMobile ||inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
         >
-            <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</span>
-            <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</span>
-            <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</span>
-            <span className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</span>
+            <span className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</span>
+            <span className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</span>
+            <span className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</span>
+            <span className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</span>
         </motion.div>
         
     <motion.div 
@@ -73,7 +73,7 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
         </div>
     </motion.div>
     <motion.div 
-        className='bg-black text-white custom-shadow-text flex flex-row justify-center items-center w-full h-[77px]'
+        className='bg-black text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text flex flex-row justify-center items-center w-full h-[77px]'
         initial={{ y: -50, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
@@ -102,11 +102,11 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
                 transition={{ duration: 1, delay: 0.2 }}
             >
                 
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Navigation</p>
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</p>
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</p>
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</p>
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Navigation</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</p>
                      
                 </motion.div>
                 <motion.div 
@@ -115,11 +115,11 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
                 animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
                 transition={{ duration: 1, delay: 0.4 }}
             >                
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Categories</p>
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</p>
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</p>
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</p>
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Categories</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Teams</p>
                      
                 </motion.div>
                 <motion.div 
@@ -129,10 +129,10 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
                 transition={{ duration: 1, delay: 0.6 }}
             >
                 
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>HELP and support</p>
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</p>
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</p>
-                    <p className='text-white custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>HELP and support</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Home</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Shop</p>
+                    <p className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text font-lato font-bold text-[16px] uppercase'>Events</p>
                      
                 </motion.div>
 
@@ -144,15 +144,16 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
         animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
         transition={{ duration: 1 }}
     >
-        <FaTwitch className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-        <FaYoutube className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-        <FaFacebook className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-        <FaInstagram className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-        <FaTwitter className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
-        <FaTiktok className='text-white custom-shadow-text text-[30px] mr-[16px]'/>
+        <FaTwitch className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text text-[30px] mr-[16px]'/>
+        <FaYoutube className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text text-[30px] mr-[16px]'/>
+        <FaFacebook className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text text-[30px] mr-[16px]'/>
+        <FaInstagram className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text text-[30px] mr-[16px]'/>
+        <FaTwitter className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text text-[30px] mr-[16px]'/>
+        <FaTiktok className='text-white cursor-pointer hover:scale-125 ease-linear transition duration-150 custom-shadow-text text-[30px] mr-[16px]'/>
     </motion.div>
     <motion.div 
-        className='bg-black text-white custom-shadow-text flex flex-row justify-center items-center absolute bottom-0 w-full h-[77px]'
+        className='bg-black text-white 
+        custom-shadow-text flex flex-row justify-center items-center absolute bottom-0 w-full h-[77px]'
         initial={{ y: 50, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
         transition={{ duration: 1, delay: 0.2 }}

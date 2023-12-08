@@ -117,7 +117,7 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
          <Image
            src={product.img}
            alt=""
-           className="w-[400px] h-[250px]  rounded-[7px]
+           className="w-[400px] h-[250px] xl:h-[300px] rounded-[7px]
            object-cover
            "
          />
