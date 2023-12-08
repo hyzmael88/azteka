@@ -108,7 +108,7 @@ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
          <motion.div
          
          key={index}
-         className="w-full h-full flex flex-col items-center justify-center custom-shadow"
+         className="w-full h-full flex flex-col items-center justify-center custom-shadow cursor-pointer"
          initial={{ y: -50, opacity: 0 }}
          animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
          transition={{ duration: 1, delay: index * 0.2 }}
