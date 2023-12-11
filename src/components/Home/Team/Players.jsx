@@ -119,7 +119,7 @@ function Players() {
           <FaArrowRight className="text-white text-[30px]" />
         </div>
       )}
-        <div   ref={scrollContainerRef} className='flex flex-row xl:justify-center gap-8 md:ml-8 overflow-x-scroll  scrollbar-hide'>
+        <div   ref={scrollContainerRef} className='flex flex-row gap-8 md:mx-8 overflow-x-scroll  scrollbar-hide'>
             
      {
          players.map((item, index)=>(
