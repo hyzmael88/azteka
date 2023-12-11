@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { products } from "../../components/Store/Store/Products";
 import Image from "next/image";
@@ -7,10 +7,18 @@ import { IoShare } from "react-icons/io5";
 import SimilarProducts from "@/components/Store/Store/SimilarProducts";
 import Banner from "@/components/Store/Store/Banner";
 import Shadow1 from "@/components/Product/Shadows/Shadow1";
+import { AppContext } from "@/context/AppContext";
+
+
 
 function Product() {
   const router = useRouter();
   const { productSlug } = router.query;
+
+  const { cart, addToCart, removeFromCart } = useContext(AppContext);
+
+  
+
 
   const [size, setSize] = useState("XS");
   const [counter, setCounter] = useState(0);
@@ -190,7 +198,9 @@ function Product() {
                         mb-5 
                         "
             >
-              <button className="bg-gradient-to-t  from-[#054A59] to-[#21ECB5] h-[54px] w-full ">
+              <button
+              onClick={() => addToCart(product, size, counter)}
+              className="bg-gradient-to-t  from-[#054A59] to-[#21ECB5] h-[54px] w-full ">
                 <p
                   className="text-white font-lato font-bold text-[20px] uppercase 
                             flex justify-center items-center gap-2"

@@ -1,10 +1,11 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaCross, FaHamburger, FaShoppingCart, FaUser } from "react-icons/fa";
 import Logo from "../assets/images/Logo/logo.png";
 import { IoClose } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from 'framer-motion';
+import { AppContext } from "@/context/AppContext";
 
 
 
@@ -29,6 +30,9 @@ const Navbar = () => {
   ];
 
   const [visible, setVisible] = useState(false)
+
+  const { cart } = useContext(AppContext);
+
   return (
     <>
       <motion.nav className="w-full h-[145px] flex xl:hidden justify-between  items-center "
@@ -44,18 +48,28 @@ const Navbar = () => {
     />
   </div>
   <div className="flex gap-4 mr-8">
+    <div className="w-full h-full relative">
     <FaShoppingCart className="text-white text-[35px]" />
+    <div className={cart.length>0&&`rounded-full bg-red-500 h-[15px] w-[15px] absolute -top-1 -right-2
+    flex flex-col justify-center items-center text-[10px] text-white
+    `}>
+      {cart.length}
+    </div>
+    </div>
+    <div className="w-full h-full">
+
     {
       visible ?
       <IoClose 
       onClick={()=>setVisible(false)}
-        className="text-white text-[35px] cursor-pointer" />
-        :
-        <GiHamburgerMenu 
-        onClick={()=>setVisible(!visible)}
-          className="text-white text-[35px] cursor-pointer" 
-          />
-      }
+      className="text-white text-[35px] cursor-pointer" />
+      :
+      <GiHamburgerMenu 
+      onClick={()=>setVisible(!visible)}
+      className="text-white text-[35px] cursor-pointer" 
+      />
+    }
+    </div>
   </div>
 </motion.nav>
 
