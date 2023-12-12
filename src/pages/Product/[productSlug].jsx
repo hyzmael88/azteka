@@ -21,7 +21,7 @@ function Product() {
 
 
   const [size, setSize] = useState("XS");
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
 
   // Buscar el producto por el productSlug en el arreglo Products
   const product = products.find(

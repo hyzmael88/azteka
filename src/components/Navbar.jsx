@@ -7,9 +7,14 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from 'framer-motion';
 import { AppContext } from "@/context/AppContext";
 
+import { useRouter } from 'next/router';
+
+
 
 
 const Navbar = () => {
+  const router = useRouter();
+
   const NavItems = [
     {
       title: "Home",
@@ -49,9 +54,11 @@ const Navbar = () => {
   </div>
   <div className="flex gap-4 mr-8">
     <div className="w-full h-full relative">
-    <FaShoppingCart className="text-white text-[35px]" />
+    <FaShoppingCart className="text-white text-[35px]" 
+    onClick={()=> router.push('/Checkout')}
+    />
     <div className={cart.length>0&&`rounded-full bg-red-500 h-[15px] w-[15px] absolute -top-1 -right-2
-    flex flex-col justify-center items-center text-[10px] text-white
+    flex flex-col justify-center items-center text-[10px] text-white cursor-pointer
     `}>
       {cart.length}
     </div>
@@ -121,12 +128,26 @@ const Navbar = () => {
     />
   </div>
   <div className="w-full flex justify-end items-center space-x-4">
-    <a href="#" className="text-white text-[32px]">
-      <FaShoppingCart />
-    </a>
+  <div className="flex gap-4 mr-8">
+  <div className="w-full h-full relative">
+    <FaShoppingCart className="text-white text-[35px] cursor-pointer" 
+    onClick={()=> router.push('/Checkout')}
+    />
+    <div className={cart.length>0&&`rounded-full bg-red-500 h-[15px] w-[15px] absolute -top-1 -right-2
+    flex flex-col justify-center items-center text-[10px] text-white
+    `}
+    
+    >
+      {cart.length}
+    </div>
+    </div>
+    <div className="w-full h-full">
+
     <a href="#" className="text-white text-[32px]">
       <FaUser />
     </a>
+    </div>
+  </div>
   </div>
 </motion.nav>
     </>
