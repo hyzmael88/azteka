@@ -15,7 +15,7 @@ function Item({ item, counter, setCounter }) {
         <div className="w-full flex flex-row justify-between items-center">
           <div className="flex flex-row items-center gap-4">
             <span className="text-white font-lato text-[19px]">QTY:</span>
-            <Counter counter={counter} setCounter={setCounter} />
+            <Counter counter={counter} setCounter={setCounter} item={item} />
           </div>
           <span className="text-white font-lato font-bold text-[26px] ">
             ${item.product.price}

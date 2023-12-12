@@ -1,6 +1,9 @@
 import React from 'react'
 
-function Counter({counter, setCounter}) {
+function Counter({counter, setCounter, item}) {
+
+    
+
   return (
     <div className="w-full h-full flex justify-center xl:justify-start items-center">
     <div

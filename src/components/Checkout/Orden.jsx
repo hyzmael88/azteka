@@ -16,6 +16,7 @@ function Orden() {
   useEffect(() => {
     let total = 0;
     cart.forEach((item) => {
+        console.log(item.qty)
         total += item.product.price * item.qty;
     });
     setSubtotal(total);
