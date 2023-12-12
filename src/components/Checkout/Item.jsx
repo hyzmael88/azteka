@@ -8,7 +8,7 @@ function Item({ item, counter, setCounter }) {
   }, [item]);
 
   return (
-    <div className="w-full h-full flex flex-row gap-4 justify-between">
+    <div className="w-full h-full flex flex-row gap-4 justify-between items-center">
       <div className="w-[70%] h-full flex flex-col gap-4">
         <h3 className="text-white header text-[19px]">{item.product.name}</h3>
         <p className="font-lato text-white text-[19px]">SIZE: {item.size}</p>
@@ -22,11 +22,11 @@ function Item({ item, counter, setCounter }) {
           </span>
         </div>
       </div>
-      <div className="w-[30%] h-[140px] flex flex-col">
+      <div className="w-[30%] h-full flex flex-col">
         <img
           src={item.product.img.src}
           alt={item.product.name}
-          className="w-full h-full object-cover"
+          className="w-full h-[140px] object-cover"
         />
       </div>
     </div>
