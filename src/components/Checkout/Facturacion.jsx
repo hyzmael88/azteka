@@ -56,7 +56,7 @@ function Facturacion() {
         </div>
       </div>
       <div
-  className={`w-full h-full grid grid-cols-2 justify-center items-center bg-[#08101D] rounded-[7px] px-4 ${open ? 'hidden' : ''}`}
+  className={`w-full h-full grid grid-cols-2 justify-center items-center bg-[#08101D] rounded-[7px] lg:px-4 gap-4 ${open ? 'hidden' : ''}`}
 >
         <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
         col-span-2
@@ -101,7 +101,7 @@ function Facturacion() {
         <Select 
           options={countryOptions} 
           styles={customStyles}
-          placeholder="SELECCIONA TU PAIS"
+          placeholder="PAIS"
         />
       </div>
       </div>

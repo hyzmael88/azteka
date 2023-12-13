@@ -54,7 +54,7 @@ function Envio() {
       items-center
       bg-[#08101D]
       rounded-[7px]
-      px-4
+      lg:px-4 gap-4
       ${open ? 'hidden' : ''}`}
 >
         <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]

@@ -20,7 +20,7 @@ function Orden() {
                 items-center
                 bg-[#08101D]
                 rounded-[7px]
-                px-4"
+                px-4 gap-4"
       >
         {cart.map((item, index) => (
           <Item

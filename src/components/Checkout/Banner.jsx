@@ -4,8 +4,8 @@ import Image from 'next/image'
 
 function Banner() {
   return (
-    <div className='w-full h-[350px]'>
-      <Image src={banner} alt='banner' className='w-full h-full '/>
+    <div className='w-full h-[350px] mb-4'>
+      <Image src={banner} alt='banner' className='w-full h-full object-cover '/>
     </div>
   )
 }

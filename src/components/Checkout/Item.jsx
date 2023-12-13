@@ -8,11 +8,11 @@ function Item({ item, counter, setCounter }) {
   }, [item]);
 
   return (
-    <div className="w-full h-full flex flex-row gap-4 justify-between items-center">
+    <div className="w-full h-full flex flex-row gap-4 justify-between lg:items-center">
       <div className="w-[70%] h-full flex flex-col gap-4">
         <h3 className="text-white header text-[19px]">{item.product.name}</h3>
         <p className="font-lato text-white text-[19px]">SIZE: {item.size}</p>
-        <div className="w-full flex flex-row justify-between items-center">
+        <div className="w-full flex flex-col lg:flex-row justify-between lg:items-center">
           <div className="flex flex-row items-center gap-4">
             <span className="text-white font-lato text-[19px]">QTY:</span>
             <Counter counter={counter} setCounter={setCounter} item={item} />
@@ -26,7 +26,7 @@ function Item({ item, counter, setCounter }) {
         <img
           src={item.product.img.src}
           alt={item.product.name}
-          className="w-full h-[140px] object-cover"
+          className="w-full lg:h-[140px] object-cover"
         />
       </div>
     </div>
