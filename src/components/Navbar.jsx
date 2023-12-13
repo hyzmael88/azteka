@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { AppContext } from "@/context/AppContext";
 
 import { useRouter } from 'next/router';
+import Link from "next/link";
 
 
 
@@ -89,13 +90,13 @@ const Navbar = () => {
     >
       <div className="w-full flex flex-col items-center gap-8">
         {NavItems.map((item, index) => (
-          <a
+          <Link
             href={item.url}
             key={index}
             className="text-white header text-[18px]"
           >
             {item.title}
-          </a>
+          </Link>
         ))}
       </div>
     </motion.div>
@@ -109,13 +110,13 @@ const Navbar = () => {
 >
   <div className="w-full flex items-center gap-4">
     {NavItems.map((item, index) => (
-      <a
+      <Link
         href={item.url}
         key={index}
         className="text-white header text-[18px]"
       >
         {item.title}
-      </a>
+      </Link>
     ))}
   </div>
   <div className="w-full flex justify-center items-center">

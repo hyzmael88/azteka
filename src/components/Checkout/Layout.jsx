@@ -6,19 +6,21 @@ import Datos from './Datos'
 import Facturacion from './Facturacion'
 import MetodoPago from './MetodoPago'
 import Orden from './Orden'
+import Subtotal from './Subtotal'
 
 function Layout() {
   return (
     <div>
         {/* Banner */}
         <Banner/>
-        <div className='h-full w-full px-[10px] lg:px-[24px] flex flex-col lg:flex-row justify-start items-start gap-8
+        <div className='h-full w-full px-[10px] lg:px-[24px] flex flex-col-reverse lg:flex-row justify-start items-start gap-8
         '>
             <div className='w-full h-full flex flex-col gap-8 '>
             <Envio/>
             <Datos/>
             <Facturacion/>
             <MetodoPago/>
+            <Subtotal/>
             </div>
             <div className='w-full h-full'>
             <Orden/>

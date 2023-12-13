@@ -100,7 +100,7 @@ function Envio() {
         <Select 
           options={countryOptions} 
           styles={customStyles}
-          placeholder="SELECCIONA TU PAIS"
+          placeholder="PAIS"
         />
       </div>
       </div>

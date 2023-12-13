@@ -1,9 +1,38 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
+  const [subtotal, setSubtotal] = useState(0);
+  const [iva, setIva] = useState(0)
+  const [envio, setEnvio] = useState(500);
   const [cart, setCart] = useState([]);
+
+
+  useEffect(() => {
+    const localData = localStorage.getItem('cart');
+    if (localData) {
+      setCart(JSON.parse(localData));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
+
+  useEffect(() => {
+    let total = 0;
+    cart.forEach((item) => {
+        console.log(item.qty)
+        total += item.product.price * item.qty;
+    });
+    setSubtotal(total);
+}, [cart]);
+
+  useEffect(() => {
+    setIva(subtotal * 0.16)
+}, [subtotal]);
 
    // Create
    const addToCart = (product, size, qty) => {
@@ -34,6 +63,12 @@ export const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider value={{ 
       cart,
+      subtotal,
+      iva,
+      envio,
+      setEnvio,
+      setSubtotal,
+      setIva,
        addToCart,
         getCart,
          updateCartItem,
