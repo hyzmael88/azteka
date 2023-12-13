@@ -2,9 +2,9 @@ import { AppContext } from '@/context/AppContext'
 import React, { useContext } from 'react'
 
 function Subtotal() {
-    const {subtotal, iva, envio} = useContext(AppContext)  
+    const {subtotal, iva, envio, total} = useContext(AppContext)  
   return (
-    <div className="mt-8 w-full h-full flex flex-col">
+    <div className="lg:mt-8 w-full h-full flex flex-col">
         <div className="w-full flex flex-row justify-between items-center text-white">
           <h4 className="header text-[24px] ">Subtotal</h4>
           <span className="font-lato font-bold text-[#9B9B9B] text-[25px] custom-shadow-text">
@@ -36,7 +36,7 @@ function Subtotal() {
             Total
           </h4>
           <span className="font-lato font-bold text-[#9B9B9B] text-[25px] custom-shadow-text">
-            ${subtotal}
+            ${total}
           </span>
         </div>
         <button className="w-full h-[50px] bg-[#FFB202] rounded-[7px] mt-8 mb-8  font-lato font-bold text-[25px] custom-shadow">

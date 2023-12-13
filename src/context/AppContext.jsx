@@ -7,6 +7,7 @@ export const AppProvider = ({ children }) => {
   const [iva, setIva] = useState(0)
   const [envio, setEnvio] = useState(500);
   const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0)
 
 
   useEffect(() => {
@@ -30,8 +31,12 @@ export const AppProvider = ({ children }) => {
     setSubtotal(total);
 }, [cart]);
 
-  useEffect(() => {
-    setIva(subtotal * 0.16)
+useEffect(() => {
+  setIva(+((subtotal * 0.16).toFixed(2)));
+}, [subtotal]);
+
+useEffect(() => {
+  setTotal((subtotal+iva+envio).toFixed(2));
 }, [subtotal]);
 
    // Create
@@ -66,6 +71,7 @@ export const AppProvider = ({ children }) => {
       subtotal,
       iva,
       envio,
+      total,
       setEnvio,
       setSubtotal,
       setIva,
