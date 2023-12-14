@@ -50,7 +50,7 @@ function Envio() {
         </div>
       </div>
       <div
-        className={`w-full h-full grid grid-cols-2 justify-center
+        className={`w-full h-full flex flex-col justify-center
       items-center
       bg-[#08101D]
       rounded-[7px]
