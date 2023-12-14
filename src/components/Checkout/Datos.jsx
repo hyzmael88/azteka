@@ -33,7 +33,6 @@ function Datos() {
       ${open ? 'hidden' : ''}`}>
 
         <div className=" w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
-        col-span-2
         ">
           <input
             type="text"
@@ -42,7 +41,6 @@ function Datos() {
           />
         </div>
         <div className=" w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
-        col-span-2
         ">
           <input
             type="text"
@@ -51,7 +49,6 @@ function Datos() {
           />
         </div>
         <div className=" w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
-        col-span-2
         ">
           <input
             type="text"
