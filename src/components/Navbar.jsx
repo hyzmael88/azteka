@@ -94,6 +94,7 @@ const Navbar = () => {
             href={item.url}
             key={index}
             className="text-white header text-[18px]"
+            onClick={()=>setVisible(false)}
           >
             {item.title}
           </Link>
@@ -114,6 +115,7 @@ const Navbar = () => {
         href={item.url}
         key={index}
         className="text-white header text-[18px]"
+        onClick={()=>setVisible(false)}
       >
         {item.title}
       </Link>

@@ -1,11 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Counter from "../Counter";
 import Image from "next/image";
+import { AppContext } from "@/context/AppContext";
 
-function Item({ item, counter, setCounter }) {
+function Item({ item  }) {
+  console.log(item)
+  
+  const [counter, setCounter] = useState(1);
+  console.log(counter)
+
+  const {removeFromCart, updateCartItem} = useContext(AppContext)
+
+  const prevCounter = useRef(counter);
+
   useEffect(() => {
     setCounter(item.qty);
+    prevCounter.current = item.qty;
   }, [item]);
+
+  useEffect(() => {
+    if(counter === 0){
+      removeFromCart(item.product.id)
+    } else if (counter !== prevCounter.current) {
+      updateCartItem(item.product.id, item.size, counter);
+      prevCounter.current = counter;
+    }
+  }, [counter]);
+
+  useEffect(() => {
+    if (item.qty !== counter) {
+      updateCartItem(item.product.id, item.size, counter);
+    }
+  }, [counter, item.qty, item.product.id, item.size, updateCartItem]);
+
+
 
   return (
     <div className="w-full h-full flex flex-row gap-4 justify-between lg:items-center">

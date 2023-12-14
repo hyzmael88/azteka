@@ -7,7 +7,6 @@ import Subtotal from "./Subtotal";
 
 function Orden() {
   const { cart } = useContext(AppContext);
-  const [counter, setCounter] = useState(1);
   return (
     <div className="w-full h-full flex flex-col ">
       <div className="flex justify-between items-center h-full text-white mb-4">
@@ -26,8 +25,6 @@ function Orden() {
           <Item
             item={item}
             key={index}
-            counter={counter}
-            setCounter={setCounter}
           />
         ))}
       </div>
