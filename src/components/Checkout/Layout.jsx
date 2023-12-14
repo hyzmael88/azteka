@@ -11,7 +11,7 @@ import Shadow1 from './Shadows/Shadow1'
 
 function Layout() {
   return (
-    <div className='w-full h-full relative'>
+    <div className='w-full h-full relative overflow-hidden'>
         {/* Banner */}
         <Banner/>
         <div className='h-full w-full px-[10px] lg:px-[24px] flex flex-col-reverse lg:flex-row justify-start items-start gap-8
