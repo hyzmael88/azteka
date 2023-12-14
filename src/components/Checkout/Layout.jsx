@@ -21,7 +21,7 @@ function Layout() {
             <Datos/>
             <Facturacion/>
             <MetodoPago/>
-            <div className='flex lg:hidden'>
+            <div className='w-full h-full flex lg:hidden'>
             <Subtotal/>
             </div>
             </div>

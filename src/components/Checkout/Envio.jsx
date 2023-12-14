@@ -35,7 +35,7 @@ function Envio() {
     const [open, setOpen] = useState(false)
   return (
     <div className="w-full h-full flex flex-col ">
-      <div className="flex justify-between items-center h-full text-white mb-4">
+      <div className="h-full w-full flex justify-between items-center l text-white mb-4">
         <h3 className="uppercase header custom-shadow-text">Envio</h3>
         <div className="">
           <span className="text-[30px] header cursor-pointer custom-shadow-text"
