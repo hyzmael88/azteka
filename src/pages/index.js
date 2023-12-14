@@ -22,7 +22,7 @@ export default function Home() {
         <title>Azteka Esports</title>
         <meta name="description" content="El mejor equipo de Esports habla hispana" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href={ico} />
+        <link rel="icon" href="/Logo/ico.png" />
       </Head>
       <main className='w-full h-full overflow-x-hidden max-w-[1444px] mx-auto'>
      
