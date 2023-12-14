@@ -27,7 +27,7 @@ export default function Home() {
         <meta property="og:url" content="https://azteka-demo.vercel.app/" />
         <meta property="og:title" content="Azteka Esports" />
         <meta property="og:description" content="El mejor equipo de Esports habla hispana" />
-        <meta property="og:image" content="metaimg.png" />
+        <meta property="og:image" content="https://azteka-demo.vercel.app/metaimg.png" />
 
       </Head>
       <main className='w-full h-full overflow-x-hidden max-w-[1444px] mx-auto'>
