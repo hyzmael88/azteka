@@ -11,7 +11,7 @@ function Orden() {
   return (
     <div className="w-full h-full flex flex-col ">
       <div className="flex justify-between items-center h-full text-white mb-4">
-        <h3 className="uppercase header">Orden</h3>
+        <h3 className="uppercase header custom-shadow-text ">Orden</h3>
       </div>
       <div
         className="w-full h-full 
@@ -20,7 +20,7 @@ function Orden() {
                 items-center
                 bg-[#08101D]
                 rounded-[7px]
-                px-4 gap-4"
+                px-4 gap-4 custom-shadow"
       >
         {cart.map((item, index) => (
           <Item

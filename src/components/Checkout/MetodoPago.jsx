@@ -13,7 +13,7 @@ function MetodoPago() {
   return (
     <div className="w-full h-full flex flex-col mb-8 ">
       <div className="flex justify-between items-center h-full text-white mb-4">
-        <h3 className="uppercase header">Metodos de pago</h3>
+        <h3 className="uppercase header custom-shadow-text">Metodos de pago</h3>
         
       </div>
       <div className="w-full h-full flex flex-row justify-start items-center">

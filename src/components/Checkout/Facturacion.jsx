@@ -39,10 +39,10 @@ function Facturacion() {
     return (
     <div className="w-full h-full flex flex-col ">
       <div className="flex justify-between items-center h-full text-white mb-4">
-        <h3 className="uppercase header">datos facturacion</h3>
+        <h3 className="uppercase header custom-shadow-text">datos facturacion</h3>
         <div className="">
           <span className="text-[30px] header
-          cursor-pointer
+          cursor-pointer custom-shadow-text
           "
           onClick={()=>{setOpen(!open)}}
           >
@@ -56,7 +56,9 @@ function Facturacion() {
         </div>
       </div>
       <div
-  className={`w-full h-full grid grid-cols-2 justify-center items-center bg-[#08101D] rounded-[7px] lg:px-4 gap-4 ${open ? 'hidden' : ''}`}
+  className={`w-full h-full grid grid-cols-2 justify-center items-center bg-[#08101D] rounded-[7px] p-4 gap-4
+  custom-shadow
+  ${open ? 'hidden' : ''}`}
 >
         <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
         col-span-2

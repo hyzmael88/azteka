@@ -8,10 +8,10 @@ function Datos() {
   return (
     <div className="w-full h-full flex flex-col ">
       <div className="flex justify-between items-center h-full text-white mb-4">
-        <h3 className="uppercase header">Datos personales</h3>
+        <h3 className="uppercase header custom-shadow-text">Datos personales</h3>
         <div className="">
           <span className="text-[30px] header
-          cursor-pointer
+          cursor-pointer custom-shadow-text
           "
            onClick={()=>{setOpen(!open)}}
           >
@@ -27,8 +27,9 @@ function Datos() {
         className={`w-full h-full grid grid-cols-2 justify-center
       items-center
       bg-[#08101D]
+      custom-shadow
       rounded-[7px]
-      lg:px-4 gap-4
+      p-4 gap-4
       ${open ? 'hidden' : ''}`}>
 
         <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]

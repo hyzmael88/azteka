@@ -36,9 +36,9 @@ function Envio() {
   return (
     <div className="w-full h-full flex flex-col ">
       <div className="flex justify-between items-center h-full text-white mb-4">
-        <h3 className="uppercase header">Envio</h3>
+        <h3 className="uppercase header custom-shadow-text">Envio</h3>
         <div className="">
-          <span className="text-[30px] header cursor-pointer"
+          <span className="text-[30px] header cursor-pointer custom-shadow-text"
           onClick={()=>{setOpen(!open)}}
           >
             {
@@ -54,7 +54,8 @@ function Envio() {
       items-center
       bg-[#08101D]
       rounded-[7px]
-      lg:px-4 gap-4
+      p-4 gap-4
+      custom-shadow
       ${open ? 'hidden' : ''}`}
 >
         <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
