@@ -60,7 +60,7 @@ function Facturacion() {
   custom-shadow
   ${open ? 'hidden' : ''}`}
 >
-        <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
+        <div className=" w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
         col-span-2
         ">
           <input
@@ -69,7 +69,7 @@ function Facturacion() {
             className="w-full h-full pl-3 pr-10 bg-transparent outline-none text-white placeholder-white"
           />
         </div>
-        <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
+        <div className=" w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
         col-span-2
         ">
           <input
@@ -78,28 +78,28 @@ function Facturacion() {
             className="w-full h-full pl-3 pr-10 bg-transparent outline-none text-white placeholder-white"
           />
         </div>
-        <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]">
+        <div className=" w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]">
           <input
             type="text"
             placeholder="CIUDAD"
             className="w-full h-full pl-3 pr-10 bg-transparent outline-none text-white placeholder-white"
           />
         </div>
-        <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]">
+        <div className=" w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]">
           <input
             type="text"
             placeholder="ESTADO"
             className="w-full h-full pl-3 pr-10 bg-transparent outline-none text-white placeholder-white"
           />
         </div>
-        <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]">
+        <div className=" w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]">
           <input
             type="text"
             placeholder="CP"
             className="w-full h-full pl-3 pr-10 bg-transparent outline-none text-white placeholder-white"
           />
         </div>
-        <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] border-white rounded-[7px]">
+        <div className=" w-full h-[50px] bg-[#08101D] border-[1px] border-white rounded-[7px]">
         <Select 
           options={countryOptions} 
           styles={customStyles}

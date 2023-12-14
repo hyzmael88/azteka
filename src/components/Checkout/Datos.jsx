@@ -32,7 +32,7 @@ function Datos() {
       p-4 gap-4
       ${open ? 'hidden' : ''}`}>
 
-        <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
+        <div className=" w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
         col-span-2
         ">
           <input
@@ -41,7 +41,7 @@ function Datos() {
             className="w-full h-full pl-3 pr-10 bg-transparent outline-none text-white placeholder-white"
           />
         </div>
-        <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
+        <div className=" w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
         col-span-2
         ">
           <input
@@ -50,7 +50,7 @@ function Datos() {
             className="w-full h-full pl-3 pr-10 bg-transparent outline-none text-white placeholder-white"
           />
         </div>
-        <div className="relative w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
+        <div className=" w-full h-[50px] bg-[#08101D] border-[1px] rounded-[7px]
         col-span-2
         ">
           <input
