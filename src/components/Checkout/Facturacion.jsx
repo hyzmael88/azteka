@@ -56,7 +56,7 @@ function Facturacion() {
         </div>
       </div>
       <div
-  className={`w-full h-full grid grid-cols-2 justify-center items-center bg-[#08101D] rounded-[7px] p-4 gap-4
+  className={`w-full h-full flex flex-col justify-center items-center bg-[#08101D] rounded-[7px] p-4 gap-4
   custom-shadow
   ${open ? 'hidden' : ''}`}
 >
