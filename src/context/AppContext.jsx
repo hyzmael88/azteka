@@ -8,6 +8,8 @@ export const AppProvider = ({ children }) => {
   const [envio, setEnvio] = useState(500);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0)
+  const [isCartInitialized, setIsCartInitialized] = useState(false);
+
 
 
   useEffect(() => {
@@ -15,11 +17,15 @@ export const AppProvider = ({ children }) => {
     if (localData) {
       setCart(JSON.parse(localData));
     }
+    setIsCartInitialized(true);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
+    if (isCartInitialized) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  }, [cart, isCartInitialized]);
+
 
 
   useEffect(() => {
@@ -32,12 +38,12 @@ export const AppProvider = ({ children }) => {
 }, [cart]);
 
 useEffect(() => {
-  setIva(+((subtotal * 0.16).toFixed(2)));
+  setIva((subtotal * 0.16));
 }, [subtotal]);
 
 useEffect(() => {
-  setTotal((subtotal+iva+envio).toFixed(2));
-}, [subtotal]);
+  setTotal((subtotal+iva+envio));
+}, [subtotal,iva,envio]);
 
    // Create
    const addToCart = (product, size, qty) => {

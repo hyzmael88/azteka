@@ -8,7 +8,7 @@ function Subtotal() {
         <div className="w-full flex flex-row justify-between items-center text-white">
           <h4 className="header text-[24px] ">Subtotal</h4>
           <span className="font-lato font-bold text-[#9B9B9B] text-[25px] custom-shadow-text">
-            ${subtotal}
+            ${subtotal.toFixed(2)}
           </span>
         </div>
         <div className="w-full flex flex-row justify-between items-center text-white mt-8">
@@ -16,7 +16,7 @@ function Subtotal() {
             + IVA(16%)
           </h4>
           <span className="font-lato font-bold text-[#9B9B9B] text-[17px] custom-shadow-text">
-            ${iva}
+            ${iva.toFixed(2)}
           </span>
         </div>
         <div className="w-full flex flex-row justify-between items-center text-white mt-4 mb-8">
@@ -24,7 +24,7 @@ function Subtotal() {
             + Envio
           </h4>
           <span className="font-lato font-bold text-[#9B9B9B] text-[17px] custom-shadow-text">
-            ${envio}
+            ${envio.toFixed(2)}
           </span>
         </div>
         <hr className="w-full h-[1.5px] bg-[#46484A] mb-5" />
@@ -36,7 +36,7 @@ function Subtotal() {
             Total
           </h4>
           <span className="font-lato font-bold text-[#9B9B9B] text-[25px] custom-shadow-text">
-            ${total}
+            ${total.toFixed(2)}
           </span>
         </div>
         <button className="w-full h-[50px] bg-[#FFB202] rounded-[7px] mt-8 mb-8  font-lato font-bold text-[25px] custom-shadow">
