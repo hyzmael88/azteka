@@ -7,11 +7,10 @@ import Facturacion from './Facturacion'
 import MetodoPago from './MetodoPago'
 import Orden from './Orden'
 import Subtotal from './Subtotal'
-import Shadow1 from './Shadows/Shadow1'
 
 function Layout() {
   return (
-    <div className='w-full h-full relative overflow-hidden'>
+    <div className='w-full h-full  overflow-hidden'>
         {/* Banner */}
         <Banner/>
         <div className='h-full w-full px-[10px] lg:px-[24px] flex flex-col-reverse lg:flex-row justify-start items-start gap-8
@@ -29,7 +28,7 @@ function Layout() {
             <Orden/>
             </div>
         </div>
-        <Shadow1/>
+        
     </div>
   )
 }
