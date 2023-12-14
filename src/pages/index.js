@@ -22,17 +22,24 @@ export default function Home() {
         <meta name="description" content="El mejor equipo de Esports habla hispana" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="ico.ico" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://azteka-demo.vercel.app/" />
+        <meta property="og:title" content="Azteka Esports" />
+        <meta property="og:description" content="El mejor equipo de Esports habla hispana" />
+        <meta property="og:image" content="metaimg.png" />
+
       </Head>
       <main className='w-full h-full overflow-x-hidden max-w-[1444px] mx-auto'>
-     
-     <Hero/>
-     <Brands/>
-     <Layout/>
-     <LayoutCreatorsEvents/> 
-     <Scores/>
-     <LayoutStore/>
-     <LayoutTeam/>
-     <Rewards/>
+
+        <Hero />
+        <Brands />
+        <Layout />
+        <LayoutCreatorsEvents />
+        <Scores />
+        <LayoutStore />
+        <LayoutTeam />
+        <Rewards />
       </main>
     </>
   )
