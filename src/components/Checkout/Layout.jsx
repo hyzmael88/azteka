@@ -16,7 +16,7 @@ function Layout() {
         <Banner/>
         <div className='h-full w-full px-[10px] lg:px-[24px] flex flex-col-reverse lg:flex-row justify-start items-start gap-8
         '>
-            <div className='w-full h-full flex flex-col gap-8 '>
+            <div className='w-full h-full flex flex-col justify-start items-center gap-8 '>
             <Envio/>
             <Datos/>
             <Facturacion/>
