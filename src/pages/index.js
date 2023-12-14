@@ -11,7 +11,6 @@ import LayoutStore from '@/components/Home/Store/LayoutStore'
 import LayoutTeam from '@/components/Home/Team/LayoutTeam'
 import Rewards from '@/components/Home/Rewards/Rewards'
 
-import ico from '../assets/images/Logo/ico.png'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +21,7 @@ export default function Home() {
         <title>Azteka Esports</title>
         <meta name="description" content="El mejor equipo de Esports habla hispana" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/Logo/ico.png" />
+        <link rel="icon" href="ico.ico" />
       </Head>
       <main className='w-full h-full overflow-x-hidden max-w-[1444px] mx-auto'>
      
