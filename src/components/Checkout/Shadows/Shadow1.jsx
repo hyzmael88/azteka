@@ -3,7 +3,7 @@ import React from 'react'
 function Shadow1() {
   return (
     <svg
-    className='lg:w-full lg:h-full absolute top-0 lg:top-52 left-0 -z-10
+    className='hidden lg:flex lg:w-full lg:h-full absolute top-0 lg:top-52 left-0 -z-10
     '
     xmlns="http://www.w3.org/2000/svg" width="1440" height="1978" viewBox="0 0 1440 1978" fill="none">
   <g filter="url(#filter0_f_307_462)">
